@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Proctor Information</title>
+    <link rel="stylesheet" href="main2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="outerContainer">
+      <div>
+        <form class="form-inline" id="form1" role="form">
+          <header class="header">
+            <h1 id="title" class="text-center">Student Proctor Form.</h1>
+            <p id="description" class="description text-center"></p>
+          </header>
+
+          <div class="form-group">
+            <label id="name-label" for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="number-label" for="phone">Phone:</label>
+            <input
+              type=""
+              name="phone_no"
+              id="phone_number"
+              min="10"
+              class="form-control"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="address-label" for="address">Address:</label>
+            <input
+              type="address"
+              name="address"
+              id="address"
+              class="form-control"
+              placeholder="Enter your Address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label id="number-label" for="number">Age</label>
+            <input
+              type="number"
+              name="age"
+              id="number"
+              min="10"
+              max="99"
+              class="form-control"
+              placeholder="Age"
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="name-label" for="name">10th Certificate:</label>
+            <input
+              type="image"
+              name="tencerti"
+              id="tencertiid"
+              class="form-control"
+              placeholder="Enter standard 10th Certificate"
+              required
+            />
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+            />
+          </div>
+
+          <div class="form-group">
+            <p>What is your current role?</p>
+            <select id="dropdown" name="role" class="form-control" required>
+              <option disabled selected value>Select current role</option>
+              <option value="student">Student</option>
+              <option value="job">Full Time Job</option>
+              <option value="learner">Full Time Learner</option>
+              <option value="preferNo">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>Would you recommend our college to your friend?</p>
+            <label>
+              <input
+                name="user-recommend"
+                value="definitely"
+                type="radio"
+                class="input-radio"
+                checked
+              />Definitely</label
+            >
+            <label>
+              <input
+                name="user-recommend"
+                value="maybe"
+                type="radio"
+                class="input-radio"
+              />Maybe</label
+            >
+
+            <label
+              ><input
+                name="user-recommend"
+                value="not-sure"
+                type="radio"
+                class="input-radio"
+              />Not sure</label
+            >
+          </div>
+
+          <div class="form-group">
+            <p>
+              What is your favorite feature of our college?
+            </p>
+            <select
+              id="most-like"
+              name="mostLike"
+              class="form-control"
+              required
+            >
+              <option disabled selected value>Select an option</option>
+              <option value="challenges">Surroundings</option>
+              <option value="projects">Placements</option>
+              <option value="community">Maintenance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>
+              What would you like to see improved in our college?
+              <span class="clue">(Check all that apply)</span>
+            </p>
+
+            <label
+              ><input
+                name="prefer"
+                value="front-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Entrance preview</label
+            >
+            <label>
+              <input
+                name="prefer"
+                value="back-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Fee stucture and facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="data-visualization"
+                type="checkbox"
+                class="input-checkbox"
+              />Placement Wing</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="challenges"
+                type="checkbox"
+                class="input-checkbox"
+              />Hostel Facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="open-source-community"
+                type="checkbox"
+                class="input-checkbox"
+              />Campus</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="gitter-help-rooms"
+                type="checkbox"
+                class="input-checkbox"
+              />Exam Structure</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="videos"
+                type="checkbox"
+                class="input-checkbox"
+              />College Events</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="city-meetups"
+                type="checkbox"
+                class="input-checkbox"
+              />Internship Oppurtunities</label
+            >
+          </div>
+          <div class="form-group">
+            <p>Any comments or suggestions?</p>
+            <textarea
+              id="comments"
+              class="input-textarea"
+              name="comment"
+              placeholder="Enter your comment here..."
+            ></textarea>
+          </div>
+
+          <!-- <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button>
+          </div> -->
+        </form>
+      </div>
+      <div>
+        <form class="form-inline" id="form2" role="form">
+          <header class="header">
+            <h1 id="title" class="text-center">Student Proctor Form.</h1>
+            <p id="description" class="description text-center"></p>
+          </header>
+
+          <div class="form-group">
+            <label id="name-label" for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="number-label" for="phone">Phone:</label>
+            <input
+              type=""
+              name="phone_no"
+              id="phone_number"
+              min="10"
+              class="form-control"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="address-label" for="address">Address:</label>
+            <input
+              type="address"
+              name="address"
+              id="address"
+              class="form-control"
+              placeholder="Enter your Address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label id="number-label" for="number">Age</label>
+            <input
+              type="number"
+              name="age"
+              id="number"
+              min="10"
+              max="99"
+              class="form-control"
+              placeholder="Age"
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="name-label" for="name">10th Certificate:</label>
+            <input
+              type="image"
+              name="tencerti"
+              id="tencertiid"
+              class="form-control"
+              placeholder="Enter standard 10th Certificate"
+              required
+            />
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+            />
+          </div>
+
+          <div class="form-group">
+            <p>What is your current role?</p>
+            <select id="dropdown" name="role" class="form-control" required>
+              <option disabled selected value>Select current role</option>
+              <option value="student">Student</option>
+              <option value="job">Full Time Job</option>
+              <option value="learner">Full Time Learner</option>
+              <option value="preferNo">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>Would you recommend our college to your friend?</p>
+            <label>
+              <input
+                name="user-recommend"
+                value="definitely"
+                type="radio"
+                class="input-radio"
+                checked
+              />Definitely</label
+            >
+            <label>
+              <input
+                name="user-recommend"
+                value="maybe"
+                type="radio"
+                class="input-radio"
+              />Maybe</label
+            >
+
+            <label
+              ><input
+                name="user-recommend"
+                value="not-sure"
+                type="radio"
+                class="input-radio"
+              />Not sure</label
+            >
+          </div>
+
+          <div class="form-group">
+            <p>
+              What is your favorite feature of our college?
+            </p>
+            <select
+              id="most-like"
+              name="mostLike"
+              class="form-control"
+              required
+            >
+              <option disabled selected value>Select an option</option>
+              <option value="challenges">Surroundings</option>
+              <option value="projects">Placements</option>
+              <option value="community">Maintenance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>
+              What would you like to see improved in our college?
+              <span class="clue">(Check all that apply)</span>
+            </p>
+
+            <label
+              ><input
+                name="prefer"
+                value="front-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Entrance preview</label
+            >
+            <label>
+              <input
+                name="prefer"
+                value="back-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Fee stucture and facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="data-visualization"
+                type="checkbox"
+                class="input-checkbox"
+              />Placement Wing</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="challenges"
+                type="checkbox"
+                class="input-checkbox"
+              />Hostel Facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="open-source-community"
+                type="checkbox"
+                class="input-checkbox"
+              />Campus</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="gitter-help-rooms"
+                type="checkbox"
+                class="input-checkbox"
+              />Exam Structure</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="videos"
+                type="checkbox"
+                class="input-checkbox"
+              />College Events</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="city-meetups"
+                type="checkbox"
+                class="input-checkbox"
+              />Internship Oppurtunities</label
+            >
+          </div>
+          <div class="form-group">
+            <p>Any comments or suggestions?</p>
+            <textarea
+              id="comments"
+              class="input-textarea"
+              name="comment"
+              placeholder="Enter your comment here..."
+            ></textarea>
+          </div>
+
+          <!-- <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button> 
+          </div>-->
+        </form>
+      </div>
+      <div>
+        <form class="form-inline" id="form3" role="form">
+          <header class="header">
+            <h1 id="title" class="text-center">Student Proctor Form.</h1>
+            <p id="description" class="description text-center"></p>
+          </header>
+
+          <div class="form-group">
+            <label id="name-label" for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="number-label" for="phone">Phone:</label>
+            <input
+              type=""
+              name="phone_no"
+              id="phone_number"
+              min="10"
+              class="form-control"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="address-label" for="address">Address:</label>
+            <input
+              type="address"
+              name="address"
+              id="address"
+              class="form-control"
+              placeholder="Enter your Address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label id="number-label" for="number">Age</label>
+            <input
+              type="number"
+              name="age"
+              id="number"
+              min="10"
+              max="99"
+              class="form-control"
+              placeholder="Age"
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="name-label" for="name">10th Certificate:</label>
+            <input
+              type="image"
+              name="tencerti"
+              id="tencertiid"
+              class="form-control"
+              placeholder="Enter standard 10th Certificate"
+              required
+            />
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+            />
+          </div>
+
+          <div class="form-group">
+            <p>What is your current role?</p>
+            <select id="dropdown" name="role" class="form-control" required>
+              <option disabled selected value>Select current role</option>
+              <option value="student">Student</option>
+              <option value="job">Full Time Job</option>
+              <option value="learner">Full Time Learner</option>
+              <option value="preferNo">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>Would you recommend our college to your friend?</p>
+            <label>
+              <input
+                name="user-recommend"
+                value="definitely"
+                type="radio"
+                class="input-radio"
+                checked
+              />Definitely</label
+            >
+            <label>
+              <input
+                name="user-recommend"
+                value="maybe"
+                type="radio"
+                class="input-radio"
+              />Maybe</label
+            >
+
+            <label
+              ><input
+                name="user-recommend"
+                value="not-sure"
+                type="radio"
+                class="input-radio"
+              />Not sure</label
+            >
+          </div>
+
+          <div class="form-group">
+            <p>
+              What is your favorite feature of our college?
+            </p>
+            <select
+              id="most-like"
+              name="mostLike"
+              class="form-control"
+              required
+            >
+              <option disabled selected value>Select an option</option>
+              <option value="challenges">Surroundings</option>
+              <option value="projects">Placements</option>
+              <option value="community">Maintenance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>
+              What would you like to see improved in our college?
+              <span class="clue">(Check all that apply)</span>
+            </p>
+
+            <label
+              ><input
+                name="prefer"
+                value="front-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Entrance preview</label
+            >
+            <label>
+              <input
+                name="prefer"
+                value="back-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Fee stucture and facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="data-visualization"
+                type="checkbox"
+                class="input-checkbox"
+              />Placement Wing</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="challenges"
+                type="checkbox"
+                class="input-checkbox"
+              />Hostel Facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="open-source-community"
+                type="checkbox"
+                class="input-checkbox"
+              />Campus</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="gitter-help-rooms"
+                type="checkbox"
+                class="input-checkbox"
+              />Exam Structure</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="videos"
+                type="checkbox"
+                class="input-checkbox"
+              />College Events</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="city-meetups"
+                type="checkbox"
+                class="input-checkbox"
+              />Internship Oppurtunities</label
+            >
+          </div>
+          <div class="form-group">
+            <p>Any comments or suggestions?</p>
+            <textarea
+              id="comments"
+              class="input-textarea"
+              name="comment"
+              placeholder="Enter your comment here..."
+            ></textarea>
+          </div>
+
+          <!-- <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button>
+          </div> -->
+        </form>
+      </div>
+      <div>
+        <form class="form-inline" id="form4" role="form">
+          <header class="header">
+            <h1 id="title" class="text-center">Student Proctor Form.</h1>
+            <p id="description" class="description text-center"></p>
+          </header>
+
+          <div class="form-group">
+            <label id="name-label" for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="number-label" for="phone">Phone:</label>
+            <input
+              type=""
+              name="phone_no"
+              id="phone_number"
+              min="10"
+              class="form-control"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="address-label" for="address">Address:</label>
+            <input
+              type="address"
+              name="address"
+              id="address"
+              class="form-control"
+              placeholder="Enter your Address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label id="number-label" for="number">Age</label>
+            <input
+              type="number"
+              name="age"
+              id="number"
+              min="10"
+              max="99"
+              class="form-control"
+              placeholder="Age"
+            />
+          </div>
+
+          <div class="form-group">
+            <label id="name-label" for="name">10th Certificate:</label>
+            <input
+              type="image"
+              name="tencerti"
+              id="tencertiid"
+              class="form-control"
+              placeholder="Enter standard 10th Certificate"
+              required
+            />
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+            />
+          </div>
+
+          <div class="form-group">
+            <p>What is your current role?</p>
+            <select id="dropdown" name="role" class="form-control" required>
+              <option disabled selected value>Select current role</option>
+              <option value="student">Student</option>
+              <option value="job">Full Time Job</option>
+              <option value="learner">Full Time Learner</option>
+              <option value="preferNo">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>Would you recommend our college to your friend?</p>
+            <label>
+              <input
+                name="user-recommend"
+                value="definitely"
+                type="radio"
+                class="input-radio"
+                checked
+              />Definitely</label
+            >
+            <label>
+              <input
+                name="user-recommend"
+                value="maybe"
+                type="radio"
+                class="input-radio"
+              />Maybe</label
+            >
+
+            <label
+              ><input
+                name="user-recommend"
+                value="not-sure"
+                type="radio"
+                class="input-radio"
+              />Not sure</label
+            >
+          </div>
+
+          <div class="form-group">
+            <p>
+              What is your favorite feature of our college?
+            </p>
+            <select
+              id="most-like"
+              name="mostLike"
+              class="form-control"
+              required
+            >
+              <option disabled selected value>Select an option</option>
+              <option value="challenges">Surroundings</option>
+              <option value="projects">Placements</option>
+              <option value="community">Maintenance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>
+              What would you like to see improved in our college?
+              <span class="clue">(Check all that apply)</span>
+            </p>
+
+            <label
+              ><input
+                name="prefer"
+                value="front-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Entrance preview</label
+            >
+            <label>
+              <input
+                name="prefer"
+                value="back-end-projects"
+                type="checkbox"
+                class="input-checkbox"
+              />Fee stucture and facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="data-visualization"
+                type="checkbox"
+                class="input-checkbox"
+              />Placement Wing</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="challenges"
+                type="checkbox"
+                class="input-checkbox"
+              />Hostel Facilities</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="open-source-community"
+                type="checkbox"
+                class="input-checkbox"
+              />Campus</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="gitter-help-rooms"
+                type="checkbox"
+                class="input-checkbox"
+              />Exam Structure</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="videos"
+                type="checkbox"
+                class="input-checkbox"
+              />College Events</label
+            >
+            <label
+              ><input
+                name="prefer"
+                value="city-meetups"
+                type="checkbox"
+                class="input-checkbox"
+              />Internship Oppurtunities</label
+            >
+          </div>
+          <div class="form-group">
+            <p>Any comments or suggestions?</p>
+            <textarea
+              id="comments"
+              class="input-textarea"
+              name="comment"
+              placeholder="Enter your comment here..."
+            ></textarea>
+          </div>
+
+          <!-- <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button> 
+          </div> -->
+        </form>
+      </div>
+    </div>
+
+    <input
+      type="submit"
+      value="submit"
+      onclick="submitforms()"
+      class="submit-button"
+    />
+  </body>
+</html>
+<script>
+  submitForms = function () {
+    document.getElementById("form1").submit();
+    document.getElementById("form2").submit();
+    document.getElementById("form3").submit();
+    document.getElementById("form4").submit();
+  };
+</script>

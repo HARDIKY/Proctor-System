@@ -33,21 +33,21 @@
     while($row = mysqli_fetch_array($result))
         {
             ?>
-        <form action="makpdf.php" method="POST">
+        <form action="makepdf4.php" method="POST">
         
         <div class="form-group">
          <label for="exampleInputEmail1">MBA : </label><br>
          <div class="form-group">
             <label for="cat">Are You Planning to do CAT:</label>
             <select name="cat" class="form-control" id="cat" readonly>
-                <option value="yes"><?php echo $row['cat']; ?></option>
+                <option value="yes" name="cat"><?php echo $row['cat']; ?></option>
                 
             </select>
         </div>
         <div class="form-group">
             <label for="cet">Are You Planning to do CET:</label>
             <select name="cet" class="form-control" id="cet">
-                <option value="yes"><?php echo $row['cet']; ?></option>
+                <option value="yes" name="cet"><?php echo $row['cet']; ?></option>
                 
             </select>
         </div>
@@ -59,7 +59,7 @@
          <div class="form-group">
             <label for="gate">GATE exam:</label>
             <select name="gate" class="form-control" id="gate">
-                <option value="yes"><?php echo $row['gate']; ?></option>
+                <option value="yes" name="gate"><?php echo $row['gate']; ?></option>
                 
             </select>
         </div>
@@ -70,14 +70,14 @@
          <div class="form-group">
             <label for="gre">GRE :</label>
             <select name="gre" class="form-control" id="gre">
-                <option value="yes"><?php echo $row['gre']; ?></option>
+                <option value="yes" name="gre"><?php echo $row['gre']; ?></option>
                
             </select>
         </div>
         <div class="form-group">
             <label for="tofel">TOFEL : </label>
             <select name="tofel" class="form-control" id="tofel">
-                <option value="yes"><?php echo $row['tofel']; ?></option>
+                <option value="yes" name="tofel"><?php echo $row['tofel']; ?></option>
                 
             </select>
         </div>
@@ -98,7 +98,10 @@
     <?php
         }
     ?>
-    <input type="submit"class="btn-success" value="Create Pdf">
+    <br>
+    <input type="submit" name="mkpdf4" class="btn btn-primary" value="Download Pdf">
+    <a href="studentHome.php" class="btn btn-primary">Go Home</a>
+    <br>
     </form>
     
       

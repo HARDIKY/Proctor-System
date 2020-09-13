@@ -33,57 +33,60 @@
     while($row = mysqli_fetch_array($result))
         {
             ?>
-        <form action="makpdf.php" method="POST">
+        <form action="makepdf1.php" method="POST">
         <div class="form-group">
          <label>Id No : </label>
-         <input type="text" value="<?php echo $row['std_rollno']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="rollno" value="<?php echo $row['std_rollno']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Name : </label>
-         <input type="text" value="<?php echo $row['name']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="name" value="<?php echo $row['name']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Mobile : </label>
-         <input type="text" value="<?php echo $row['mobile']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="mobile" value="<?php echo $row['mobile']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Address : </label>
-         <input type="text" value="<?php echo $row['address']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="address" value="<?php echo $row['address']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Blood Group : </label>
-         <input type="text" value="<?php echo $row['bg']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="bg" value="<?php echo $row['bg']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Email : </label>
-         <input type="text" value="<?php echo $row['email']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="email" value="<?php echo $row['email']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>BirthDate : </label>
-         <input type="date" value="<?php echo $row['birthdate']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="date" name="birthdate" value="<?php echo $row['birthdate']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Date of Admission : </label>
-         <input type="date" value="<?php echo $row['monthaddm']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="date" name="myad" value="<?php echo $row['monthaddm']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Hobbies : </label>
-         <input type="text" value="<?php echo $row['hobbies']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="hobbies" value="<?php echo $row['hobbies']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Sports : </label>
-         <input type="text" value="<?php echo $row['sports']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="sports" value="<?php echo $row['sports']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
          <label>Health Problems : </label>
-         <input type="text" value="<?php echo $row['health']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         <input type="text" name="health" value="<?php echo $row['health']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          
          
     <?php
         }
     ?>
-    <input type="submit"class="btn-success" value="Create Pdf">
+    <br>
+    <input type="submit" name="mkpdf1" class="btn btn-primary" value="Download Pdf">
+    <a href="studentHome.php" class="btn btn-primary">Go Home</a>
+    <br>
     </form>
     
       

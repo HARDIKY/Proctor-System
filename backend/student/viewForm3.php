@@ -33,7 +33,7 @@
     while($row = mysqli_fetch_array($result))
         {
             ?>
-        <form action="makpdf.php" method="POST">
+        <form action="makepdf3.php" method="POST">
         <div class="form-group">
          <label for="exampleInputEmail1">Id No</label>
          <input type="text" name="rollno" value="<?php echo $row['std_rollno']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
@@ -198,7 +198,10 @@
     <?php
         }
     ?>
-    <input type="submit"class="btn-success" value="Create Pdf">
+    <br>
+    <input type="submit" name="mkpdf3" class="btn btn-primary" value="Download Pdf">
+    <a href="studentHome.php" class="btn btn-primary">Go Home</a>
+    <br>
     </form>
     
       

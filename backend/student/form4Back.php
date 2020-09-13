@@ -1,7 +1,13 @@
 <?php
 
+session_start();
+    if (!isset($_SESSION['rollnol'])) {
+        header("location:student.php");
+    }
+
 $conn = mysqli_connect('localhost', 'root', '', 'student');
 
+$val = $_SESSION['rollnol'];
 $rollno = $_POST['rollno'];
 $cat = $_POST['cat'];
 $cet = $_POST['cet'];
@@ -13,7 +19,7 @@ $aos = $_POST['aos'];
 
 
 if(isset($_POST["submit"])){
-    $query1 = "INSERT INTO futureplans (std_rollno, cat, cet, gate, gre, tofel, others, aos) VALUES ('$rollno', '$cat', '$cet', '$gate', '$gre', '$tofel', '$others', '$aos');";
+    $query1 = "INSERT INTO futureplans (std_rollno, cat, cet, gate, gre, tofel, others, aos) VALUES ('$val', '$cat', '$cet', '$gate', '$gre', '$tofel', '$others', '$aos');";
     mysqli_query($conn, $query1);
     header("location:form5.php?form4=completed");
 }else {

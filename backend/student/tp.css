@@ -1,0 +1,14 @@
+input[type="radio"] + .details {
+  display: none;
+}
+
+input[type="radio"]:checked + .fordebit {
+  display: block;
+}
+
+input[type="radio"]:checked + .forcredit {
+  display: block;
+}
+input[type="radio"] {
+  float: left;
+}

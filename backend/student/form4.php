@@ -37,11 +37,11 @@
   <br>
   <br>
     <form action="form4Back.php" method="POST" >
-        <div class="form-group">
+        <!-- <div class="form-group">
          <label for="exampleInputEmail1">Id No</label>
          <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
          <small id="emailHelp" class="form-text text-dark">mentioned in College's ID Card</small>
-        </div>
+        </div> -->
         <br>
         <div class="form-group">
          <label for="exampleInputEmail1">MBA : </label><br>

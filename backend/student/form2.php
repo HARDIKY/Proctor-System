@@ -34,10 +34,11 @@
 
   <h1>Family Details</h1>
     <form action="form2Back.php" method="POST" >
-        <div class="form-group">
+        <!-- <div class="form-group">
          <label for="exampleInputEmail1">Id No</label>
          <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Id card No">
-        </div>
+        </div> -->
+        <br>
         <div class="form-group">
          <label for="exampleInputEmail1">Father's Name</label>
          <input type="text" name="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your father's name">

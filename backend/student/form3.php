@@ -38,7 +38,7 @@
         echo '<script>alert("Semester 1 details submitted successfully ")</script>';
         }
         if ($_GET['sem1'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data")</script>';
           }
       }
       if (isset($_GET['sem2'])) {
@@ -46,7 +46,7 @@
         echo '<script>alert("Semester 2 details submitted successfully ")</script>';
         }
         if ($_GET['sem2'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data")</script>';
           }
       }
       if (isset($_GET['sem3'])) {
@@ -54,7 +54,7 @@
         echo '<script>alert("Semester 3 details  submitted successfully ")</script>';
         }
         if ($_GET['sem3'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data")</script>';
           }
       }
       if (isset($_GET['sem4'])) {
@@ -62,7 +62,7 @@
         echo '<script>alert("Semester 4 details  submitted successfully ")</script>';
         }
         if ($_GET['sem4'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data")</script>';
           }
       }
       if (isset($_GET['sem5'])) {
@@ -70,7 +70,7 @@
         echo '<script>alert("Semester 5 details  submitted successfully ")</script>';
         }
         if ($_GET['sem5'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data ")</script>';
           }
       }
       if (isset($_GET['sem6'])) {
@@ -78,7 +78,7 @@
         echo '<script>alert("Semester 6 details submitted successfully ")</script>';
         }
         if ($_GET['sem6'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data")</script>';
           }
       }
       if (isset($_GET['sem7'])) {
@@ -86,7 +86,7 @@
         echo '<script>alert("Semester 7 details submitted successfully ")</script>';
         }
         if ($_GET['sem7'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data")</script>';
           }
       }
       if (isset($_GET['sem8'])) {
@@ -94,7 +94,7 @@
         echo '<script>alert("Semester 8 details submitted successfully ")</script>';
         }
         if ($_GET['sem8'] == 'notsuccess') {
-          echo '<script>alert("Please Enter the Roll No ")</script>';
+          echo '<script>alert("Something wrong with you data ")</script>';
           }
       }
     ?>
@@ -104,11 +104,11 @@
  
   <h1>Education Qualification</h1>
     <form action="form3Back.php" method="POST" >
-        <div class="form-group">
+        <!-- <div class="form-group">
          <label for="exampleInputEmail1">Id No</label>
          <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mentioned in College's ID Card">
          <small id="emailHelp" class="form-text text-dark">mentioned in College's ID Card</small>
-        </div>
+        </div> -->
         
         <div class="form-group">
          <label for="exampleInputEmail1">Passing date : </label>
@@ -122,16 +122,16 @@
             <option value="Others">Others</option>
         </select>
         </div> 
-        <input type="submit" name="fbtn" value="Save SSC Details" class="btn-primary">
+        <input type="submit" name="fbtn" value="Save SSC Details" class="btn btn-primary">
         <br>
         <br>
         <br>
           <div class="form-group">
           <h3>Acadamic records</h3>
           <br>
-          <input type="text" name="rollnoo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter yor roll No AGAIN !">
-          <br>
-          <div>
+          <!-- <input type="text" name="rollnoo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter yor roll No AGAIN !">
+          <br> -->
+          </div>
              <div>
              <label>SEMESTER 1</label>
              <input type="radio" name="payment_type" id="credit">
@@ -165,7 +165,7 @@
              <input type="text" name="sem2sub">
              <br>
              <br>
-             <input type="submit" name="sem2btn" value="Save SEM 2 Details" class="btn-primary">
+             <input type="submit" name="sem2btn" value="Save SEM 2 Details" class="btn btn-primary">
             </div>
             </div>
             <br>

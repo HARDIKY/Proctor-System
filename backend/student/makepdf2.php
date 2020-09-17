@@ -27,7 +27,7 @@
 
         $data = '';
 
-        $data .= '<h1>Family Details Form</h1><br>';
+        $data .= '<h1>Family Details</h1><br>';
         $data .= '<strong>Father\'s Name : </strong>'.$fname.'<br>';
         $data .= '<p>Father\'s Email : <small>'.$femail.'</small></p>';
         $data .= '<p>Father\'s Age : <small>'.$fage.'</small></p>';

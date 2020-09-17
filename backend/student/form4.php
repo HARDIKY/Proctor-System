@@ -32,16 +32,10 @@
 
 
 <div class="container mt-5">
-  
+  <br>
   <h1>Future Plans</h1>
   <br>
-  <br>
     <form action="form4Back.php" method="POST" >
-        <!-- <div class="form-group">
-         <label for="exampleInputEmail1">Id No</label>
-         <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-         <small id="emailHelp" class="form-text text-dark">mentioned in College's ID Card</small>
-        </div> -->
         <br>
         <div class="form-group">
          <label for="exampleInputEmail1">MBA : </label><br>
@@ -106,8 +100,6 @@
         <a href="studentHome.php" class="btn btn-primary">Go Home</a>
     </form>
     <br>    
-    <br>
-    <br>
     <br>
 </div>
 </body>

@@ -35,7 +35,7 @@
 
         $data = '';
 
-        $data .= '<h1>Qualification Details Form</h1><br>';
+        $data .= '<h1>Qualification Details</h1><br>';
         $data .= '<h2>School Details</h2>';
         $data .= '<p>roll no : <small>'.$rollno.'</small></p>';
         $data .= '<p>school passing date : <small>'.$sscdate.'</small></p><br>';

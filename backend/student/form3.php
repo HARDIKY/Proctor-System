@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="tp.css">
-    <title>Form3</title>
+    <title>Form 3</title>
     <style>
     body{
       background-color: #37af75;
@@ -21,16 +21,9 @@
 <body>
 
 <?php 
-      if (isset($_GET['form2'])) {
-        if ($_GET['form2'] == 'completed') {
-          echo '<script>alert("Family Details submitted successfully")</script>';
-
-        }
-      }
       if (isset($_GET['fbtn'])) {
         if ($_GET['fbtn'] == 'success') {
-          echo '<script>alert("School Details Saved ")</script>';
-          unset($_GET['fbtn']);
+          echo '<script>alert("Details Saved Successfilly ")</script>';
         }
       }
       if (isset($_GET['sem1'])) {
@@ -97,45 +90,51 @@
           echo '<script>alert("Something wrong with you data ")</script>';
           }
       }
-    ?>
-
-
+?>
 <div class="container mt-5">
- 
+ <br>
   <h1>Education Qualification</h1>
+  <br>
     <form action="form3Back.php" method="POST" >
-        <!-- <div class="form-group">
-         <label for="exampleInputEmail1">Id No</label>
-         <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mentioned in College's ID Card">
-         <small id="emailHelp" class="form-text text-dark">mentioned in College's ID Card</small>
-        </div> -->
-        
         <div class="form-group">
-         <label for="exampleInputEmail1">Passing date : </label>
-         <input type="date" name="sscdate" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Date/Year of passing">
+         <label for="exampleInputEmail1">10th Marks : </label>
+         <input type="text" name="sscmarks" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your 10th percentage">
+         <label for="exampleInputEmail1">School Passing Date : </label>
+         <input type="date" name="sscdate" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Date & Year of passing">
          <br>
-         <label for="board">Select you Board:</label><br>
-         <select name="sscyear">
+         <label for="board">Select your School Board:</label><br>
+         <select name="sscboard">
             <option value="SSC">SSC</option>
             <option value="ICSE">ICSE</option>
             <option value="CBSE">CBSE</option>
             <option value="Others">Others</option>
         </select>
         </div> 
-        <input type="submit" name="fbtn" value="Save SSC Details" class="btn btn-primary">
+        <hr>
+        <div class="form-group">
+        <label for="exampleInputEmail1">12th / Diploma Marks : </label>
+         <input type="text" name="dipmarks" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="12th / Diploma percentage">
+        <label for="exampleInputEmail1">12th / Diploma Passing Date : </label>
+         <input type="date" name="dipdate" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Date & Year of passing">
+         <br>
+        </div> 
+        <input type="submit" name="fbtn" value="Save Above Details" class="btn btn-primary">
         <br>
+        <br> 
+        <hr>
         <br>
         <br>
           <div class="form-group">
-          <h3>Acadamic records</h3>
+          <h3>Academic Records</h3>
           <br>
-          <!-- <input type="text" name="rollnoo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter yor roll No AGAIN !">
-          <br> -->
           </div>
              <div>
              <label>SEMESTER 1</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
+             <label>Sem 1 Percentage:</label>
+             <input type="text" name="sem1per">
+             <br>
              <label>Attendance:</label>
              <input type="text" name="sem1attd">
              <br>
@@ -155,6 +154,9 @@
              <label>SEMESTER 2</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
+             <label>Sem 2 Percentage:</label>
+             <input type="text" name="sem2per">
+             <br>
              <label>Attendance:</label>
              <input type="text" name="sem2attd">
              <br>
@@ -174,7 +176,8 @@
              <label>SEMESTER 3</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
-             <!-- <input type="text" name="rollno3" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter yor roll No AGAIN !"> -->
+             <label>Sem 3 Percentage:</label>
+             <input type="text" name="sem3per">
              <br>
              <label>Attendance:</label>
              <input type="text" name="sem3attd">
@@ -195,6 +198,9 @@
              <label>SEMESTER 4</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
+             <label>Sem 4 Percentage:</label>
+             <input type="text" name="sem4per">
+             <br>
              <label>Attendance:</label>
              <input type="text" name="sem4attd">
              <br>
@@ -214,6 +220,9 @@
              <label>SEMESTER 5</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
+             <label>Sem 5 Percentage:</label>
+             <input type="text" name="sem5per">
+             <br>
              <label>Attendance:</label>
              <input type="text" name="sem5attd">
              <br>
@@ -233,6 +242,9 @@
              <label>SEMESTER 6</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
+             <label>Sem 6 Percentage:</label>
+             <input type="text" name="sem6per">
+             <br>
              <label>Attendance:</label>
              <input type="text" name="sem6attd">
              <br>
@@ -252,6 +264,9 @@
              <label>SEMESTER 7</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
+             <label>Sem 7 Percentage:</label>
+             <input type="text" name="sem7per">
+             <br>
              <label>Attendance:</label>
              <input type="text" name="sem7attd">
              <br>
@@ -271,6 +286,9 @@
              <label>SEMESTER 8</label>
              <input type="radio" name="payment_type" id="credit">
              <div class="forcredit details">
+             <label>Sem 8 Percentage:</label>
+             <input type="text" name="sem8per">
+             <br>
              <label>Attendance:</label>
              <input type="text" name="sem8attd">
              <br>
@@ -290,10 +308,10 @@
     <br>
     <br>
   </form>
-  <!-- <a href="form4.php" class="btn btn-primary">next</a> -->
   <a href="studentHome.php" class="btn btn-primary">Go Home</a>
     
-  <br><br><br><br>
+  <br>
+  <br>
 </div>
 </body>
 </html>

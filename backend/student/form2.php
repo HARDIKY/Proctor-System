@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Form2</title>
+    <title>Form 2</title>
     <style>
     body{
       background-color: #37af75;
@@ -12,33 +12,11 @@
     </style>
 </head>
 <body>
-
-<?php 
-      if (isset($_GET['form1'])) {
-        if ($_GET['form1'] == 'completed') {
-          echo '<script>alert("Student Details submitted successfully")</script>';
-          unset($_GET['form1']);
-        }
-      }
-      if (isset($_GET['form2'])) {
-        if ($_GET['form2'] == 'notcompleted') {
-          echo '<script>alert("There is something wrong with your data")</script>';
-
-        }
-      }
-        
-    ?>
-
-
 <div class="container mt-5">
-
+<br>
   <h1>Family Details</h1>
+  <br>
     <form action="form2Back.php" method="POST" >
-        <!-- <div class="form-group">
-         <label for="exampleInputEmail1">Id No</label>
-         <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Id card No">
-        </div> -->
-        <br>
         <div class="form-group">
          <label for="exampleInputEmail1">Father's Name</label>
          <input type="text" name="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your father's name">
@@ -85,7 +63,8 @@
         <input type="submit" name="submit" value="      Submit        " class="btn btn-primary">
         <a href="studentHome.php" class="btn btn-primary">Go Home</a>
         </form>
-    <br><br><br><br>
+    <br>
+    <br>
 </div>
 </body>
 </html>

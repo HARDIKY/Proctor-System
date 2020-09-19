@@ -57,6 +57,7 @@
     <option value="form2.php">Family Detalis Form</option>
     <option value="form3.php">Qualification Detalis Form</option>
     <option value="form4.php">Future Plan Detalis Form</option>
+    <option value="form5.php">Document Upload Form</option>
   </select>
   <select class="btn btn-dark" name="forma" onchange="location = this.value;">
     <option>View Submitted Form</option>
@@ -64,6 +65,7 @@
     <option value="viewForm2.php">Family Detalis Form</option>
     <option value="viewForm3.php">Qualification Detalis Form</option>
     <option value="viewForm4.php">Future Plan Detalis Form</option>
+    <!-- <option value="viewForm5.php">Document Upload Form</option> -->
   </select>
     
   

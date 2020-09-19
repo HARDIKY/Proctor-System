@@ -62,10 +62,10 @@ if (isset($_POST['Upload2'])) { // if save button on the form is clicked
         if (move_uploaded_file($file, $destination)) {
             $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
             if (mysqli_query($conn, $sql)) {
-                echo "File uploaded successfully";
+                header("location:form5.php?upload=success");
             }
         } else {
-            echo "Failed to upload file.";
+            header("location:form5.php?upload=notsuccess");
         }
     }
 }
@@ -93,10 +93,10 @@ if (isset($_POST['Upload3'])) { // if save button on the form is clicked
         if (move_uploaded_file($file, $destination)) {
             $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
             if (mysqli_query($conn, $sql)) {
-                echo "File uploaded successfully";
+                header("location:form5.php?upload=success");
             }
         } else {
-            echo "Failed to upload file.";
+            header("location:form5.php?upload=notsuccess");
         }
     }
 }
@@ -124,10 +124,10 @@ if (isset($_POST['Upload4'])) { // if save button on the form is clicked
         if (move_uploaded_file($file, $destination)) {
             $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
             if (mysqli_query($conn, $sql)) {
-                echo "File uploaded successfully";
+                header("location:form5.php?upload=success");
             }
         } else {
-            echo "Failed to upload file.";
+            header("location:form5.php?upload=notsuccess");
         }
     }
 }
@@ -155,10 +155,10 @@ if (isset($_POST['Upload5'])) { // if save button on the form is clicked
         if (move_uploaded_file($file, $destination)) {
             $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
             if (mysqli_query($conn, $sql)) {
-                echo "File uploaded successfully";
+                header("location:form5.php?upload=success");
             }
         } else {
-            echo "Failed to upload file.";
+            header("location:form5.php?upload=notsuccess");
         }
     }
 }
@@ -186,13 +186,12 @@ if (isset($_POST['Upload6'])) { // if save button on the form is clicked
         if (move_uploaded_file($file, $destination)) {
             $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
             if (mysqli_query($conn, $sql)) {
-                echo "File uploaded successfully";
+                header("location:form5.php?upload=success");
             }
         } else {
-            echo "Failed to upload file.";
+            header("location:form5.php?upload=notsuccess");
         }
     }
 }
 
 ?>
-

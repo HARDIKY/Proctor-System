@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Form1</title>
+    <title>Student Form</title>
     <style>
     body{
       background-color: #37af75;
@@ -18,25 +18,14 @@
     </style>
 </head>
 <body>
-
-<?php 
-      if (isset($_GET['form1'])) {
-        if ($_GET['form1'] == 'notCompleted') {
-          echo '<script>alert("There is something wrong with your data")</script>';
-        }
-      }
-    
-    ?>
-
-
 <div class="container mt-5">
-  
-  <br>
-  <h1>Student Form</h1>
+<br>
+<h1>Student Form</h1>
+<br>
     <form action="form1Back.php" method="POST"  >
         <div class="form-group">
-         <label for="exampleInputEmail1">Id No</label>
-         <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+         <label for="exampleInputEmail1">Id-Card No</label>
+         <input type="text" name="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mentioned in College's ID Card">
          <small id="emailHelp" class="form-text text-dark">mentioned in College's ID Card</small>
         </div>
         
@@ -48,6 +37,25 @@
          <label for="exampleInputEmail1">Mobile</label>
          <input type="text" name="phone_no" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Mobile No">
         </div>
+        <div class="form-group">
+        <label for="dept">Department:</label>
+        <select name="dept">
+          <option value="IT">Information Technology</option>
+          <option value="CO">Computer Engineering</option>
+          <option value="EC">Electronic Engineering</option>
+          <option value="ME">Mechanical Engineering</option>
+          <option value="CE">Civil Engineering</option>
+        </select>
+         </div>
+         <div class="form-group">
+         <label for="currentyear">Current Year:</label>
+        <select name="currentyear">
+          <option value="first">First</option>
+          <option value="second">Second</option>
+          <option value="third">Third</option>
+          <option value="fourth">Fourth</option>
+        </select>
+         </div>
         <div class="form-group">
          <label for="exampleInputEmail1">Address</label>
          <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Address">
@@ -77,7 +85,7 @@
 
         <div class="form-group">
          <label for="exampleInputEmail1">Hobbies</label>
-         <input type="text" name="hobbies" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter New Hobbies">
+         <input type="text" name="hobbies" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
          <label for="exampleInputEmail1">Sports</label>
@@ -91,13 +99,14 @@
         
         <br>
         <input type="submit" name="submit" value="      Submit        " class="btn btn-primary">
-        <a href="studentHome.php" class="btn btn-primary">Go Home</a>
+        <a href="studentHome.php" class="btn btn-danger">Go Home</a>
         
                 
     </form>
-    <!-- <input type="submit" name="pdf" value="      Pdf        " class="btn btn-primary"> -->
     
-    <br>    <br><br><br>
+    
+    <br>
+    <br>
 </div>
 </body>
 </html>

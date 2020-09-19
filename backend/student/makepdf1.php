@@ -1,8 +1,10 @@
 <?php
     require_once __DIR__ . '/vendor/autoload.php';
     if(isset($_POST["mkpdf1"])) {
-        $rollno = $_POST['rollno'];
+        $rollno = $_POST['rollno']; 
         $mobile = $_POST['mobile'];
+        $dept = $_POST['dept'];
+        $currentyear = $_POST['currentyear'];
         $name = $_POST['name'];
         $bg = $_POST['bg'];
         $email = $_POST['email'];
@@ -18,9 +20,11 @@
 
         $data = '';
 
-        $data .= '<h1>Student Details Form</h1><br>';
+        $data .= '<h1>Student Details</h1><br>';
         $data .= '<strong>Name : </strong>'.$name.'<br><br>';
         $data .= '<strong>ID Card No : </strong>'.$rollno.'<br><br>';
+        $data .= '<strong>Department Name : </strong>'.$dept.'<br><br>';
+        $data .= '<strong>Current Year : </strong>'.$currentyear.'<br><br>';
         $data .= '<strong>Mobile No : </strong>'.$mobile.'<br><br>';
         $data .= '<strong>Address : </strong>'.$address.'<br><br>';
         $data .= '<strong>Blood Group : </strong>'.$bg.'<br><br>';

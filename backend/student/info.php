@@ -1,3 +1,0 @@
-TODO:
-
-INSERT INTO `qualidetail`(`std_rollno`, `sscdate`, `sscyear`, `sem1attd`, `sem1date`, `sem1sub`, `sem2attd`, `sem2date`, `sem2sub`, `sem3attd`, `sem3date`, `sem3sub`, `sem4attd`, `sem4date`, `sem4sub`, `sem5attd`, `sem5date`, `sem5sub`, `sem6attd`, `sem6date`, `sem6sub`, `sem7attd`, `sem7date`, `sem7sub`, `sem8attd`, `sem8date`, `sem8sub`) VALUES ('4', 10/10/2000, 'ssc','75','10/20/1000', 'm3');

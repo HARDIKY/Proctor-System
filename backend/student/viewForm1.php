@@ -47,6 +47,14 @@
          <input type="text" name="mobile" value="<?php echo $row['mobile']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>
          <div class="form-group">
+         <label>Department : </label>
+         <input type="text" name="dept" value="<?php echo $row['dept']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         </div>
+         <div class="form-group">
+         <label>Current Year : </label>
+         <input type="text" name="currentyear" value="<?php echo $row['currentyear']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+         </div>
+         <div class="form-group">
          <label>Address : </label>
          <input type="text" name="address" value="<?php echo $row['address']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
          </div>

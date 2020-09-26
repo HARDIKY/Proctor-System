@@ -1,5 +1,7 @@
-# Proctor-System
- Proctor System For Maintaning Student Information.
+ # Proctor-System
+ [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=HARDIKY)](https://github.com/anuraghazra/github-readme-stats)
+
+
 # Login-Page
  ![](img/demo1.png)
 # Introductory Page

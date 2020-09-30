@@ -1,4 +1,4 @@
- <?php
+<?php
     session_start();
     if (!isset($_SESSION['rollnol'])) {
         header("location:student.php");
@@ -101,7 +101,7 @@
             <div class="form-group col-md-3">
               <label for="exampleInputEmail1">Mobile</label>
               <input
-                type="text"
+                type="Number"
                 name="phone_no"
                 class="form-control"
                 id="exampleInputEmail1"
@@ -109,10 +109,7 @@
                 placeholder="Enter Your Mobile Number "
               />
             </div>
-            <!-- <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div> -->
+            
           
           <div class="form-group col-md-8">
             <label for="inputAddress2">Enter Your Address</label>
@@ -124,15 +121,6 @@
             />
           </div>
         </div>
-          <!-- <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Sign in</button> -->
         </div>
         <!-- =================================================Admission Information========================================================================================= -->
 
@@ -165,6 +153,7 @@
             </div>
           </div>
  
+
           <div class="form-row">
             <div class="form-group col-md-3" style="padding-top: 17px;">
               <label for="year">Admined To:</label>
@@ -175,7 +164,6 @@
             </div>
             <div class="form-group col-md-3">
               <label for="dept" style="padding-top:17px;">Currently in:</label>
-              <label for="currentyear">Current Year:</label>
               <select name="currentyear">
                 <option value="first">First</option>
                 <option value="second">Second</option>
@@ -183,10 +171,22 @@
                 <option value="fourth">Fourth</option>
               </select>
             </div>
-          </div>
-
-
+            <div class="form-group col-md-3">
+                <label for="dept" style="padding-top:17px;">Currently in Sem:</label>
+                <select name="currentyear">
+                    <option value="first">First</option>
+                    <option value="second">Second</option>
+                    <option value="third">Third</option>
+                    <option value="fourth">Fourth</option>
+                    <option value="first">Fifth</option>
+                    <option value="second">Sixth</option>
+                    <option value="third">Seventh</option>
+                    <option value="fourth">Eight</option>
+                  
+                </select>
+              </div>
         </div>
+    </div>
 
         <!-- =================================================Personal Information========================================================================================= -->
 

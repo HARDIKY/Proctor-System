@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="main.css" />
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
-<body>   
+<body> 
+  <!--Alert Messages  -->
 <?php 
   if (isset($_GET['signup'])) {
     if ($_GET['signup'] == 'not') {
@@ -23,6 +24,8 @@
   }
     
 ?>
+
+<!-- FrontEnd Code -->
     <div class="bg">
       <div class="home">
         <div class="wrapper">
@@ -80,6 +83,7 @@
                 </div>
                 <span>or use your account</span>-->
                 <input id="rollnol" type="text" name="rollnol" placeholder="Rollno" />
+                <input id="name" type="text" name="name" placeholder="Name" />
                 <input id="passwordl" type="password" name="passwordl" placeholder="Password" />
                 <a href="sendEmail.php">Forgot Your Password</a>
 
@@ -118,7 +122,7 @@
             });
           </script>
 
-          <div class="sidebar">
+          <!-- <div class="sidebar">
            
             <h2>Proctor Information</h2>
             <ul>
@@ -140,7 +144,7 @@
                 ><i class="fab fa-instagram"></i
               ></a>
             </div>
-          </div>
+          </div> -->
           <div class="main_content">
             <div class="info">
               <!----<div><h1>Idhar Login and Sign up page aayega</h1></div>

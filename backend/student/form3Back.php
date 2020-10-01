@@ -25,7 +25,7 @@
         mysqli_query($conn, $q1);
         header("location:form3.php?fbtn=success");
     }else {
-        $q2 = "INSERT INTO qualidetail (std_rollno, sscmarks, sscdate, sscboard, dipmarks, dipdate) VALUES ('$val', '$sscdate', '$sscboard', '$dipmarks', '$dipdate');";
+        $q2 = "INSERT INTO qualidetail (std_rollno, sscmarks, sscdate, sscboard, dipmarks, dipdate) VALUES ('$val','$sscmarks','$sscdate', '$sscboard', '$dipmarks', '$dipdate');";
         mysqli_query($conn, $q2);
         header("location:form3.php?fbtn=success");
         }

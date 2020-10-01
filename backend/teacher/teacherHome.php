@@ -45,7 +45,7 @@ body {
 <h1 align="center"><b>Admin Panel</b> </h1>
 <br>
 <br>
-    <form action="" method="post">
+    <form action="" method="GET">
     <div class="form-group ">
       <label for="inputState">Department : </label>
       <select name="dept" id="inputState" class="form-control">
@@ -87,13 +87,13 @@ body {
         </thead>
         <tbody class="tbody">
         <?php
-        if (isset($_POST["submit"])) {
+        if (isset($_GET["submit"])) {
             session_start();
 
             $conn = mysqli_connect('localhost', 'root', '', 'student');
 
-            $dept = $_POST['dept'];
-            $year = $_POST['year'];
+            $dept = $_GET['dept'];
+            $year = $_GET['year'];
 
             $query1 = "SELECT * FROM studentinfo WHERE dept = '$dept' AND currentyear = '$year';"; 
             $result = mysqli_query($conn, $query1);

@@ -32,6 +32,8 @@
         echo '<script>alert("Student Details submitted successfully")</script>';
       }
       }
+      // , name, m_name, l_name, mobile, dept, currentyear, currentsem, address, bg, email, birthdate, monthaddm, year, hobbies, hobbie2, hobbie3, sports, sport2, health
+
   ?>
     <div class="container mt-3">
       <br />
@@ -44,8 +46,9 @@
       <?php 
         $val = $_SESSION['rollnol'];
         $conn = mysqli_connect('localhost', 'root', '', 'student');
-        $query = "SELECT * FROM studentinfo WHERE std_rollno = '$val';";
-        $result = mysqli_query($conn, $query);
+        $query1 = "SELECT * FROM studentinfo WHERE rollno = '$val';";
+        $result = mysqli_query($conn, $query1);
+                
     
         while($row = mysqli_fetch_array($result))
         {
@@ -99,7 +102,7 @@
                 class="form-control"
                 id="exampleInputEmail1"
                 placeholder="Mentioned On Id Card"
-                value="<?php echo $row['std_rollno']; ?>"
+                value="<?php echo $row['rollno']; ?>"
               />
             </div>
             <div class="form-group col-md-4">
@@ -379,6 +382,7 @@
         </div>
         <?php
             }
+          
         ?>
          
       </form>

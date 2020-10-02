@@ -3,7 +3,18 @@
     if (!isset($_SESSION['rollnol'])) {
         header("location:student.php");
     }
+    $val = $_SESSION['rollnol'];
+    $conn = mysqli_connect('localhost', 'root', '', 'student');
+    $query1 = "SELECT * FROM studentinfo WHERE rollno = '$val';";
+    $result = mysqli_query($conn, $query1);
+    $rowcount = mysqli_num_rows($result);
+    if($rowcount == 0) {
+      $query2 = "INSERT INTO studentinfo (rollno) VALUES ('$val');";
+      mysqli_query($conn, $query2);
+    } 
 ?>
+
+
 <!DOCTYPE html>  
 <html lang="en">
 <head>

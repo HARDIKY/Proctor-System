@@ -26,15 +26,15 @@
 
     // For Storing the Student's Data
     if(isset($_POST["subForm1"])){
-        $query1 = "SELECT * FROM studentinfo WHERE std_rollno = '$rollno';";
+        $query1 = "SELECT * FROM studentinfo WHERE rollno = '$rollno';";
         $result = mysqli_query($conn, $query1);
         $rowcount = mysqli_num_rows($result);   
         if($rowcount == 1) {
-            $query2 = "UPDATE studentinfo SET std_rollno = '$rollno', name = '$name', m_name = '$m_name', l_name = '$l_name', mobile = '$mobile', dept = '$dept', currentyear = '$currentyear', currentsem = '$currentsem', address = '$address', bg= '$bg', email = '$email', birthdate = '$birthdate', monthaddm = '$monthaddm', year = '$year', hobbies = '$hobbies', hobbie2 = '$hobbie2', hobbie3 = '$hobbie3', sports = '$sports', sport2 = '$sport2', health = '$health' WHERE std_rollno = '$rollno';";
+            $query2 = "UPDATE studentinfo SET rollno = '$rollno', name = '$name', m_name = '$m_name', l_name = '$l_name', mobile = '$mobile', dept = '$dept', currentyear = '$currentyear', currentsem = '$currentsem', address = '$address', bg= '$bg', email = '$email', birthdate = '$birthdate', monthaddm = '$monthaddm', year = '$year', hobbies = '$hobbies', hobbie2 = '$hobbie2', hobbie3 = '$hobbie3', sports = '$sports', sport2 = '$sport2', health = '$health' WHERE rollno = '$rollno';";
             mysqli_query($conn, $query2);
             header("location:form1.php?form1=completed");
         }else {
-            $query3 = "INSERT INTO studentinfo (std_rollno, name, m_name, l_name, mobile, dept, currentyear, currentsem, address, bg, email, birthdate, monthaddm, year, hobbies, hobbie2, hobbie3, sports, sport2, health) VALUES ('$rollno', '$name', '$m_name', '$l_name', '$mobile', '$dept', '$currentyear', '$currentsem', '$address', '$bg', '$email', '$birthdate', '$monthaddm', '$year', '$hobbies', '$hobbie2', '$hobbie3', '$sports', '$sport2', '$health');";
+            $query3 = "INSERT INTO studentinfo (rollno, name, m_name, l_name, mobile, dept, currentyear, currentsem, address, bg, email, birthdate, monthaddm, year, hobbies, hobbie2, hobbie3, sports, sport2, health) VALUES ('$rollno', '$name', '$m_name', '$l_name', '$mobile', '$dept', '$currentyear', '$currentsem', '$address', '$bg', '$email', '$birthdate', '$monthaddm', '$year', '$hobbies', '$hobbie2', '$hobbie3', '$sports', '$sport2', '$health');";
             mysqli_query($conn, $query3);
             header("location:form1.php?form1=completed");
         }

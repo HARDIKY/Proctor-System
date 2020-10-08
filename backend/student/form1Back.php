@@ -32,7 +32,7 @@
         if($rowcount == 1) {
             $query2 = "UPDATE studentinfo SET rollno = '$rollno', name = '$name', m_name = '$m_name', l_name = '$l_name', mobile = '$mobile', dept = '$dept', currentyear = '$currentyear', currentsem = '$currentsem', address = '$address', bg= '$bg', email = '$email', birthdate = '$birthdate', monthaddm = '$monthaddm', year = '$year', hobbies = '$hobbies', hobbie2 = '$hobbie2', hobbie3 = '$hobbie3', sports = '$sports', sport2 = '$sport2', health = '$health' WHERE rollno = '$rollno';";
             mysqli_query($conn, $query2);
-            header("location:form1.php?form1=completed");
+            header("location:form1.php?form1=updated");
         }else {
             $query3 = "INSERT INTO studentinfo (rollno, name, m_name, l_name, mobile, dept, currentyear, currentsem, address, bg, email, birthdate, monthaddm, year, hobbies, hobbie2, hobbie3, sports, sport2, health) VALUES ('$rollno', '$name', '$m_name', '$l_name', '$mobile', '$dept', '$currentyear', '$currentsem', '$address', '$bg', '$email', '$birthdate', '$monthaddm', '$year', '$hobbies', '$hobbie2', '$hobbie3', '$sports', '$sport2', '$health');";
             mysqli_query($conn, $query3);

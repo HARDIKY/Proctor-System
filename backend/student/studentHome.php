@@ -5,12 +5,22 @@
     }
     $val = $_SESSION['rollnol'];
     $conn = mysqli_connect('localhost', 'root', '', 'student');
+    
+    // for Student Table
     $query1 = "SELECT * FROM studentinfo WHERE rollno = '$val';";
     $result = mysqli_query($conn, $query1);
     $rowcount = mysqli_num_rows($result);
     if($rowcount == 0) {
-      $query2 = "INSERT INTO studentinfo (rollno) VALUES ('$val');";
-      mysqli_query($conn, $query2);
+      $q1 = "INSERT INTO studentinfo (rollno) VALUES ('$val');";
+      mysqli_query($conn, $q1);
+    }
+    // for Family Table
+    $query2 = "SELECT * FROM familiydetail WHERE std_rollno = '$val';";
+    $result2 = mysqli_query($conn, $query2);
+    $rowcount2 = mysqli_num_rows($result2);
+    if($rowcount2 == 0) {
+      $q2 = "INSERT INTO familiydetail (std_rollno) VALUES ('$val');";
+      mysqli_query($conn, $q2);
     } 
 ?>
 
@@ -23,12 +33,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Student Home</title>
 </head>
+
 <body>
 
 <!-- FrontEnd For Home Page -->
 <div class="jumbotron">
   <h1 class="display-4">Hello ..</h1>
-  <p class="lead">Welcome to Procotor System</p>
+  <p class="lead">Welcome to Procotor System </p>
   <p class="lead">Your ID-Card No : <?php echo $_SESSION['rollnol']?> </p>
   <p class="lead">Your Name : <?php echo $_SESSION['name']?> </p>
   <hr class="my-4">

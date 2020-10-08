@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 01, 2020 at 08:38 AM
+-- Generation Time: Oct 08, 2020 at 08:11 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -31,24 +31,46 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `familiydetail`;
 CREATE TABLE IF NOT EXISTS `familiydetail` (
   `std_rollno` varchar(100) NOT NULL,
-  `fname` varchar(100) NOT NULL,
-  `mname` varchar(100) NOT NULL,
-  `sname` varchar(100) NOT NULL,
-  `fage` varchar(10) NOT NULL,
-  `mage` varchar(10) NOT NULL,
-  `sage` varchar(10) NOT NULL,
-  `fqua` varchar(100) NOT NULL,
-  `mqua` varchar(100) NOT NULL,
-  `squa` varchar(100) NOT NULL,
-  `focc` varchar(100) NOT NULL,
-  `mocc` varchar(100) NOT NULL,
-  `socc` varchar(100) NOT NULL,
-  `fph` varchar(100) NOT NULL,
-  `mph` varchar(100) NOT NULL,
-  `sph` varchar(100) NOT NULL,
-  `femail` varchar(100) NOT NULL,
-  `memail` varchar(100) NOT NULL,
-  `semail` varchar(100) NOT NULL,
+  `f_fname` varchar(100) DEFAULT NULL,
+  `f_mname` varchar(100) DEFAULT NULL,
+  `f_lname` varchar(100) DEFAULT NULL,
+  `f_email` varchar(100) DEFAULT NULL,
+  `f_mob` varchar(100) DEFAULT NULL,
+  `f_age` varchar(100) DEFAULT NULL,
+  `f_qua` varchar(100) DEFAULT NULL,
+  `f_occ` varchar(100) DEFAULT NULL,
+  `m_fname` varchar(100) DEFAULT NULL,
+  `m_mname` varchar(100) DEFAULT NULL,
+  `m_lname` varchar(100) DEFAULT NULL,
+  `m_email` varchar(100) DEFAULT NULL,
+  `m_mob` varchar(100) DEFAULT NULL,
+  `m_age` varchar(100) DEFAULT NULL,
+  `m_qua` varchar(100) DEFAULT NULL,
+  `m_occ` varchar(100) DEFAULT NULL,
+  `s1_fname` varchar(100) DEFAULT NULL,
+  `s1_mname` varchar(100) DEFAULT NULL,
+  `s1_lname` varchar(100) DEFAULT NULL,
+  `s1_email` varchar(100) DEFAULT NULL,
+  `s1_mob` varchar(100) DEFAULT NULL,
+  `s1_age` varchar(100) DEFAULT NULL,
+  `s1_qua` varchar(100) DEFAULT NULL,
+  `s1_occ` varchar(100) DEFAULT NULL,
+  `s2_fname` varchar(100) DEFAULT NULL,
+  `s2_mname` varchar(100) DEFAULT NULL,
+  `s2_lname` varchar(100) DEFAULT NULL,
+  `s2_email` varchar(100) DEFAULT NULL,
+  `s2_mob` varchar(100) DEFAULT NULL,
+  `s2_age` varchar(100) DEFAULT NULL,
+  `s2_qua` varchar(100) DEFAULT NULL,
+  `s2_occ` varchar(100) DEFAULT NULL,
+  `s3_fname` varchar(100) DEFAULT NULL,
+  `s3_mname` varchar(100) DEFAULT NULL,
+  `s3_lname` varchar(100) DEFAULT NULL,
+  `s3_email` varchar(100) DEFAULT NULL,
+  `s3_mob` varchar(100) DEFAULT NULL,
+  `s3_age` varchar(100) DEFAULT NULL,
+  `s3_qua` varchar(100) DEFAULT NULL,
+  `s3_occ` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`std_rollno`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -56,8 +78,9 @@ CREATE TABLE IF NOT EXISTS `familiydetail` (
 -- Dumping data for table `familiydetail`
 --
 
-INSERT INTO `familiydetail` (`std_rollno`, `fname`, `mname`, `sname`, `fage`, `mage`, `sage`, `fqua`, `mqua`, `squa`, `focc`, `mocc`, `socc`, `fph`, `mph`, `sph`, `femail`, `memail`, `semail`) VALUES
-('1', 'Akshay', 'nknkkk', 'knkn', '50', '50', '50', 'knkn', 'ss', 'knkn', 'knknnn', 'knkn', 'knkn', '1234567896', '1234567896', '1234567896', 'ak@gmail.com', 'ak@gmail.com', 'ak@gmail.com');
+INSERT INTO `familiydetail` (`std_rollno`, `f_fname`, `f_mname`, `f_lname`, `f_email`, `f_mob`, `f_age`, `f_qua`, `f_occ`, `m_fname`, `m_mname`, `m_lname`, `m_email`, `m_mob`, `m_age`, `m_qua`, `m_occ`, `s1_fname`, `s1_mname`, `s1_lname`, `s1_email`, `s1_mob`, `s1_age`, `s1_qua`, `s1_occ`, `s2_fname`, `s2_mname`, `s2_lname`, `s2_email`, `s2_mob`, `s2_age`, `s2_qua`, `s2_occ`, `s3_fname`, `s3_mname`, `s3_lname`, `s3_email`, `s3_mob`, `s3_age`, `s3_qua`, `s3_occ`) VALUES
+('1', 'abc', 'abc', 'abc', 'a@gmail.com', '', '50', 'knkn', 'ss', 'knkn', 'knknnn', 'knkn', 'a@gmail.com', '1234567896', '10', '1234567896', 'ak@gmail.com', 'a', 'a', 'a', 'a@gmail.com', 'a', '10', 'a', 'a', 'a', 'a', 'a', 'a@gmail.com', 'a', '10', 'a', 'a', 'b', 'b', 'b', 'a@gmail.com', 'b', '10', 'cccccccc', 'cccccc'),
+('2', 'xyz', 'xyz', 'xyz', 'xyz@gmail.com', '', '50', 'xyz', 'xyz', 'abc', 'abc', 'abc', 'abc@gmail.com', '232323', '48', 'abc', 'abc', 'asd', 'asd', 'asd', 'asd@gmail.com', '454545', '25', 'asd', 'asd', 'aaaa', 'aaaaa', 'aaaaa', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -159,8 +182,7 @@ CREATE TABLE IF NOT EXISTS `qualidetail` (
 --
 
 INSERT INTO `qualidetail` (`std_rollno`, `sscmarks`, `sscdate`, `sscboard`, `dipmarks`, `dipdate`, `sem1attd`, `sem1date`, `sem1sub`, `sem1per`, `sem2attd`, `sem2date`, `sem2sub`, `sem2per`, `sem3attd`, `sem3date`, `sem3sub`, `sem3per`, `sem4attd`, `sem4date`, `sem4sub`, `sem4per`, `sem5attd`, `sem5date`, `sem5sub`, `sem5per`, `sem6attd`, `sem6date`, `sem6sub`, `sem6per`, `sem7attd`, `sem7date`, `sem7sub`, `sem7per`, `sem8attd`, `sem8date`, `sem8sub`, `sem8per`) VALUES
-('1', '92', '2020-09-04', 'SSC', '85', '2020-09-19', '78', '2020-09-02', '', '99', 'qqq', '2020-09-09', 'kk', '75', 'kk', '1000-12-12', 'kn', '87', 'kn', '2100-02-01', 'kn', '85', '100', '0001-10-26', 'qq', '83', 'wwe', '2020-09-26', 'www', '86', 'aaa', '2020-09-03', 'kn', '90', 'kjaskan', '2020-09-24', 'knknsk', '95'),
-('65', '80', '2020-09-12', 'SSC', '85', '2020-09-17', '100', '1111-11-11', 'pk', '50', '78', '2020-09-02', 'm3', '85', '100', '3333-11-22', 'mk', '90', NULL, '2020-09-12', NULL, NULL, NULL, '2020-09-12', NULL, NULL, NULL, '2020-09-12', NULL, NULL, NULL, '2020-09-12', NULL, NULL, '100', '2020-09-12', 'nnnnn', NULL);
+('1', '92', '2020-09-04', 'SSC', '85', '2020-09-19', '78', '2020-09-02', '', '99', 'qqq', '2020-09-09', 'kk', '75', 'kk', '1000-12-12', 'kn', '87', 'kn', '2100-02-01', 'kn', '85', '100', '0001-10-26', 'qq', '83', 'wwe', '2020-09-26', 'www', '86', 'aaa', '2020-09-03', 'kn', '90', 'kjaskan', '2020-09-24', 'knknsk', '95');
 
 -- --------------------------------------------------------
 
@@ -182,13 +204,8 @@ CREATE TABLE IF NOT EXISTS `register` (
 --
 
 INSERT INTO `register` (`std_rollno`, `std_name`, `std_email`, `std_pass`) VALUES
-('2', 'pd', 'ak@gmail.com', '123'),
-('1', 'hardik', 'akshay.morre@gmail.com', '123'),
-('S193944106', 'Akshay more', 'moreakshay725@gmail.com', 'Akshay@123'),
-('10', 'Akshay more', 'ak@gmail.com', '123'),
-('65', 'hardik', 'ak@gmail.com', '123'),
-('23', 'nishant', 'akshay.morre@gmail.com', '23'),
-('88', 'aaa', 'ak@gmail.com', '123');
+('1', 'hardik', 'a@gmail.com', '123'),
+('2', 'pd', 'pd@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -198,7 +215,7 @@ INSERT INTO `register` (`std_rollno`, `std_name`, `std_email`, `std_pass`) VALUE
 
 DROP TABLE IF EXISTS `studentinfo`;
 CREATE TABLE IF NOT EXISTS `studentinfo` (
-  `std_rollno` varchar(100) NOT NULL,
+  `rollno` varchar(100) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `m_name` varchar(100) DEFAULT NULL,
   `l_name` varchar(100) DEFAULT NULL,
@@ -218,39 +235,16 @@ CREATE TABLE IF NOT EXISTS `studentinfo` (
   `sports` varchar(100) DEFAULT NULL,
   `sport2` varchar(100) DEFAULT NULL,
   `health` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`std_rollno`)
+  PRIMARY KEY (`rollno`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `studentinfo`
 --
 
-INSERT INTO `studentinfo` (`std_rollno`, `name`, `m_name`, `l_name`, `mobile`, `dept`, `currentyear`, `currentsem`, `address`, `bg`, `email`, `birthdate`, `monthaddm`, `year`, `hobbies`, `hobbie2`, `hobbie3`, `sports`, `sport2`, `health`) VALUES
-('IT8', 'kkk', NULL, NULL, '123456789', 'IT', 'third', NULL, 'pune', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('IT7', 'hhf', NULL, NULL, '123456789', 'IT', 'third', NULL, 'pune', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('IT6', 'ghf', NULL, NULL, '123456789', 'IT', 'third', NULL, 'pune', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('C1', 'abc', NULL, NULL, '123456789', 'CE', 'first', NULL, 'pune', 'o', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('C2', 'qwe', NULL, NULL, '123456789', 'CE', 'first', NULL, 'pune', 'o', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('C3', 'rty', NULL, NULL, '123456789', 'CE', 'first', NULL, 'pune', 'o', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('C4', 'uio', NULL, NULL, '123456789', 'CE', 'first', NULL, 'thane', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'football', NULL, 'nothing'),
-('C5', 'opo', NULL, NULL, '123456789', 'CE', 'first', NULL, 'thane', 'a', 'abc@gmail.com', '2020-09-05', '2020-09-12', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('C6', 'asd', NULL, NULL, '123456789', 'CE', 'first', NULL, 'thane', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'basketball', NULL, 'nothing'),
-('C7', 'fgh', NULL, NULL, '123456789', 'CE', 'first', NULL, 'borivali', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'basketball', NULL, 'nothing'),
-('C8', 'hjk', NULL, NULL, '123456789', 'CE', 'first', NULL, 'borivali', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'basketball', NULL, 'nothing'),
-('C9', 'lkj', NULL, NULL, '123456789', 'CE', 'first', NULL, 'borivali', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'basketball', NULL, 'nothing'),
-('1', 'Akshay', 'abc', 'abc', '4545454', 'Information Technology', 'Third', 'First', 'Mumbai', 'a', 'ak@gmail.com', '2020-09-02', '2020-09-07', 'second', 'nothing', 'nothing', 'nothing', 'nothing', 'nothing', 'nothing'),
-('M1', 'zxc', NULL, NULL, '123456789', 'ME', 'first', NULL, 'mumbai', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'basketball', NULL, 'nothing'),
-('M2', 'zxc', NULL, NULL, '123456789', 'ME', 'first', NULL, 'mumbai', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'basketball', NULL, 'nothing'),
-('M3', 'zxc', NULL, NULL, '123456789', 'ME', 'first', NULL, 'thane', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'basketball', NULL, 'nothing'),
-('M4', 'zxc', NULL, NULL, '123456789', 'ME', 'first', NULL, 'thane', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'football', NULL, 'nothing'),
-('M5', 'zxc', NULL, NULL, '123456789', 'ME', 'first', NULL, 'thane', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'second', 'nothing', NULL, NULL, 'football', NULL, 'nothing'),
-('IT1', 'mkj', NULL, NULL, '123456789', 'IT', 'third', NULL, 'mumbai', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'second', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('IT2', 'lllk', NULL, NULL, '123456789', 'IT', 'third', NULL, 'mumbai', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'second', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('IT3', 'jklk', NULL, NULL, '123456789', 'IT', 'third', NULL, 'mumbai', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'second', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('IT4', 'ghf', NULL, NULL, '123456789', 'IT', 'second', NULL, 'pune', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('IT5', 'aaa', NULL, NULL, '123456789', 'IT', 'second', NULL, 'pune', 'a', 'abc@gmail.com', '0000-00-00', '0000-00-00', 'first', 'nothing', NULL, NULL, 'cricket', NULL, 'nothing'),
-('5', 'pd', NULL, NULL, '7276800872', 'IT', 'first', NULL, 'mumbai', 'a', 'ak@gmail.com', '2020-09-24', '2020-09-11', 'first', 'nothing', NULL, NULL, 'nothing', NULL, 'nothing'),
-('88', 'Akshay ', 'eeeee', 'ee', '7276800872', 'me', 'first', 'first', 'mumbai', 'a', 'ak@gmail.com', '1111-11-11', '1111-11-11', 'first', 'nothing', 'nothing', 'nothing', 'nothing', 'pppppp', 'nothing');
+INSERT INTO `studentinfo` (`rollno`, `name`, `m_name`, `l_name`, `mobile`, `dept`, `currentyear`, `currentsem`, `address`, `bg`, `email`, `birthdate`, `monthaddm`, `year`, `hobbies`, `hobbie2`, `hobbie3`, `sports`, `sport2`, `health`) VALUES
+('1', 'Hardik', 'abc', 'Yewale', '10101010', 'Information Technology', 'First', 'SEM 1', 'Barcelona', 'a', 'hardik@gmail.com', '2020-10-01', '1999-10-02', 'First', '', 'Football', '', '', '', ''),
+('2', 'pd', 'sdd', 'hero', '12343212', 'Mechanical Engineering', 'First', 'SEM 1', 'Amsterdam', 'o', 'pd@gmail.com', '1992-10-01', '2020-10-07', 'First', '', '', '', '', '', 'handicapped');
 
 -- --------------------------------------------------------
 

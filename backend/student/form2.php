@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['rollnol'])) {
-        header("location:student.php");
+        header("location:index.php");
     }
 ?>
 <!DOCTYPE html>

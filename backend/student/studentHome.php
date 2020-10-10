@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['rollnol'])) {
-        header("location:student.php");
+        header("location:index.php");
     }
     $val = $_SESSION['rollnol'];
     $conn = mysqli_connect('localhost', 'root', '', 'student');
@@ -21,6 +21,14 @@
     if($rowcount2 == 0) {
       $q2 = "INSERT INTO familiydetail (std_rollno) VALUES ('$val');";
       mysqli_query($conn, $q2);
+    } 
+    // for Qualification Table
+    $query3 = "SELECT * FROM qualidetail WHERE std_rollno = '$val';";
+    $result3 = mysqli_query($conn, $query3);
+    $rowcount3 = mysqli_num_rows($result3);
+    if($rowcount3 == 0) {
+      $q3 = "INSERT INTO qualidetail (std_rollno) VALUES ('$val');";
+      mysqli_query($conn, $q3);
     } 
 ?>
 

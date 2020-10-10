@@ -23,7 +23,7 @@
         $_SESSION['name'] = $name;
         header("location:studentHome.php");
     }else {
-        header("location:student.php?login=wrongInfo");
+        header("location:index.php?login=wrongInfo");
     }
 
 ?>

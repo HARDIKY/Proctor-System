@@ -373,7 +373,7 @@
           <input
             type="file"
             name="idpdf"
-            id="pdf_
+            id="pdf"
             accept="application/pdf"
             style="padding-top: 5px"
           />
@@ -386,7 +386,7 @@
             class="form-control"
             id="NameInfo2"
             aria-describedby="emailHelp"
-            placeholder="Hobbie 2"
+            placeholder="Hobbie 1 "
             value="<?php echo $row['hobbie3']; ?>"
           />
         </div>
@@ -412,7 +412,7 @@
           class="form-control"
           id="NameInfo2"
           aria-describedby="emailHelp"
-          placeholder="Hobbie 2"
+          placeholder="Hobbie1"
           value="<?php echo $row['sport2']; ?>"
         />
     </div>

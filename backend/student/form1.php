@@ -222,6 +222,7 @@
           aria-describedby="emailHelp"
           placeholder="Enter Your Birthdate"
           value="<?php echo $row['monthaddm']; ?>"
+          min="2005-01-02"
         />
       </div>
       <div class="form-group col-3">

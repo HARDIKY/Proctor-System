@@ -21,12 +21,12 @@
     $rowcount = mysqli_num_rows($result);   
     
     if($rowcount == 1) {
-        header("location:student.php?signup=not");
+        header("location:index.php?signup=not");
     
     }else {
         $query2 = "INSERT INTO register (std_rollno, std_name, std_email, std_pass) VALUES ('$rollno', '$name', '$email', '$password');";
         mysqli_query($conn, $query2);
-        header("location:student.php?signup=success");
+        header("location:index.php?signup=success");
     }
 
 

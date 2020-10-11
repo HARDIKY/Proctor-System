@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['rollnol'])) {
-        header("location:student.php");
+        header("location:index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -338,7 +338,7 @@
           class="form-control"
           id="NameInfo2"
            aria-describedby="emailHelp"
-          placeholder="Hobbie 2"
+          placeholder="Hobbies"
           value="<?php echo $row['hobbies']; ?>"
         />
       </div>
@@ -383,11 +383,11 @@
           <label for="inputEmail4" style="padding-top: 5px"></label>
           <input
             type="text"
-            name="hobbie2"
+            name="hobbie3"
             class="form-control"
             id="NameInfo2"
             aria-describedby="emailHelp"
-            placeholder="Hobbie 1 "
+            placeholder="Hobbie 3 "
             value="<?php echo $row['hobbie3']; ?>"
           />
         </div>
@@ -409,12 +409,12 @@
       <label for="inputEmail4">Any Sports Activity ?</label>
         <input
           type="text"
-          name="hobbie2"
+          name="sports"
           class="form-control"
           id="NameInfo2"
           aria-describedby="emailHelp"
-          placeholder="Hobbie1"
-          value="<?php echo $row['sport2']; ?>"
+          placeholder="Sports"
+          value="<?php echo $row['sports']; ?>"
         />
     </div>
     <div class="form-group col-md-4">
@@ -436,15 +436,37 @@
         <label for="inputEmail4" style="padding-top: 5px"></label>
         <input
           type="text"
-          name="hobbie2"
+          name="sport2"
           class="form-control"
           id="NameInfo2"
           aria-describedby="emailHelp"
-          placeholder="Hobbie 2"
+          placeholder="Sport 2"
           value="<?php echo $row['sport2']; ?>"
         />
       </div>
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-7 pp">
+        <label for="inputPassword4">Upload Certificate:</label>
+        <input
+          type="file"
+          name="idpdf"
+          id="pdf_file"
+          accept="application/pdf"
+          style="padding-top: 5px"
+        />
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputEmail4" style="padding-top: 5px"></label>
+        <input
+          type="text"
+          name="sport3"
+          class="form-control"
+          id="NameInfo2"
+          aria-describedby="emailHelp"
+          placeholder="Sport 3"
+          value="<?php echo $row['sport3']; ?>"
+        />
+      </div>
+      <div class="form-group col-md-7 pp">
         <label for="inputPassword4">Upload Certificate:</label>
         <input
           type="file"

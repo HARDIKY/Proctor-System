@@ -2,5 +2,5 @@
 
     session_start();
     session_destroy();
-    header("location:student.php");   
+    header("location:index.php");   
 ?>

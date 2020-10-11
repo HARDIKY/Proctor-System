@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 08, 2020 at 08:11 AM
+-- Generation Time: Oct 10, 2020 at 04:29 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -80,7 +80,8 @@ CREATE TABLE IF NOT EXISTS `familiydetail` (
 
 INSERT INTO `familiydetail` (`std_rollno`, `f_fname`, `f_mname`, `f_lname`, `f_email`, `f_mob`, `f_age`, `f_qua`, `f_occ`, `m_fname`, `m_mname`, `m_lname`, `m_email`, `m_mob`, `m_age`, `m_qua`, `m_occ`, `s1_fname`, `s1_mname`, `s1_lname`, `s1_email`, `s1_mob`, `s1_age`, `s1_qua`, `s1_occ`, `s2_fname`, `s2_mname`, `s2_lname`, `s2_email`, `s2_mob`, `s2_age`, `s2_qua`, `s2_occ`, `s3_fname`, `s3_mname`, `s3_lname`, `s3_email`, `s3_mob`, `s3_age`, `s3_qua`, `s3_occ`) VALUES
 ('1', 'abc', 'abc', 'abc', 'a@gmail.com', '', '50', 'knkn', 'ss', 'knkn', 'knknnn', 'knkn', 'a@gmail.com', '1234567896', '10', '1234567896', 'ak@gmail.com', 'a', 'a', 'a', 'a@gmail.com', 'a', '10', 'a', 'a', 'a', 'a', 'a', 'a@gmail.com', 'a', '10', 'a', 'a', 'b', 'b', 'b', 'a@gmail.com', 'b', '10', 'cccccccc', 'cccccc'),
-('2', 'xyz', 'xyz', 'xyz', 'xyz@gmail.com', '', '50', 'xyz', 'xyz', 'abc', 'abc', 'abc', 'abc@gmail.com', '232323', '48', 'abc', 'abc', 'asd', 'asd', 'asd', 'asd@gmail.com', '454545', '25', 'asd', 'asd', 'aaaa', 'aaaaa', 'aaaaa', '', '', '', '', '', '', '', '', '', '', '', '', '');
+('2', 'xyz', 'xyz', 'xyz', 'xyz@gmail.com', '', '50', 'xyz', 'xyz', 'abc', 'abc', 'abc', 'abc@gmail.com', '232323', '48', 'abc', 'abc', 'asd', 'asd', 'asd', 'asd@gmail.com', '454545', '25', 'asd', 'asd', 'aaaa', 'aaaaa', 'aaaaa', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+('', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -182,7 +183,9 @@ CREATE TABLE IF NOT EXISTS `qualidetail` (
 --
 
 INSERT INTO `qualidetail` (`std_rollno`, `sscmarks`, `sscdate`, `sscboard`, `dipmarks`, `dipdate`, `sem1attd`, `sem1date`, `sem1sub`, `sem1per`, `sem2attd`, `sem2date`, `sem2sub`, `sem2per`, `sem3attd`, `sem3date`, `sem3sub`, `sem3per`, `sem4attd`, `sem4date`, `sem4sub`, `sem4per`, `sem5attd`, `sem5date`, `sem5sub`, `sem5per`, `sem6attd`, `sem6date`, `sem6sub`, `sem6per`, `sem7attd`, `sem7date`, `sem7sub`, `sem7per`, `sem8attd`, `sem8date`, `sem8sub`, `sem8per`) VALUES
-('1', '92', '2020-09-04', 'SSC', '85', '2020-09-19', '78', '2020-09-02', '', '99', 'qqq', '2020-09-09', 'kk', '75', 'kk', '1000-12-12', 'kn', '87', 'kn', '2100-02-01', 'kn', '85', '100', '0001-10-26', 'qq', '83', 'wwe', '2020-09-26', 'www', '86', 'aaa', '2020-09-03', 'kn', '90', 'kjaskan', '2020-09-24', 'knknsk', '95');
+('1', '100', '2020-09-04', 'SSC', '85', '2020-09-19', '78', '2020-09-02', 'abc', '99', '75', '2020-09-09', 'abc', '75', '75', '2010-12-12', 'abc', '87', '75', '2100-02-01', 'abc', '85', '100', '2010-10-26', 'qq', '83', 'wwe', '2020-09-26', 'www', '86', 'aaa', '2020-09-03', 'kn', '90', 'kjaskan', '2020-09-24', 'knknsk', '100'),
+('2', '2', '2020-10-10', 'CBSC', '100', '2020-10-10', '70', '2020-10-10', 'ss', '75', '', '2020-10-10', '', '', '', '2020-10-10', '', '', '', '2020-10-10', '', '', '', '2020-10-10', '', '', '', '2020-10-10', '', '', '', '2020-10-10', '', '', '', '2020-10-10', '', ''),
+('', NULL, '2020-10-10', NULL, NULL, '2020-10-10', NULL, '2020-10-10', NULL, NULL, NULL, '2020-10-10', NULL, NULL, NULL, '2020-10-10', NULL, NULL, NULL, '2020-10-10', NULL, NULL, NULL, '2020-10-10', NULL, NULL, NULL, '2020-10-10', NULL, NULL, NULL, '2020-10-10', NULL, NULL, NULL, '2020-10-10', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -234,6 +237,7 @@ CREATE TABLE IF NOT EXISTS `studentinfo` (
   `hobbie3` varchar(100) DEFAULT NULL,
   `sports` varchar(100) DEFAULT NULL,
   `sport2` varchar(100) DEFAULT NULL,
+  `sport3` varchar(100) DEFAULT NULL,
   `health` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`rollno`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -242,9 +246,10 @@ CREATE TABLE IF NOT EXISTS `studentinfo` (
 -- Dumping data for table `studentinfo`
 --
 
-INSERT INTO `studentinfo` (`rollno`, `name`, `m_name`, `l_name`, `mobile`, `dept`, `currentyear`, `currentsem`, `address`, `bg`, `email`, `birthdate`, `monthaddm`, `year`, `hobbies`, `hobbie2`, `hobbie3`, `sports`, `sport2`, `health`) VALUES
-('1', 'Hardik', 'abc', 'Yewale', '10101010', 'Information Technology', 'First', 'SEM 1', 'Barcelona', 'a', 'hardik@gmail.com', '2020-10-01', '1999-10-02', 'First', '', 'Football', '', '', '', ''),
-('2', 'pd', 'sdd', 'hero', '12343212', 'Mechanical Engineering', 'First', 'SEM 1', 'Amsterdam', 'o', 'pd@gmail.com', '1992-10-01', '2020-10-07', 'First', '', '', '', '', '', 'handicapped');
+INSERT INTO `studentinfo` (`rollno`, `name`, `m_name`, `l_name`, `mobile`, `dept`, `currentyear`, `currentsem`, `address`, `bg`, `email`, `birthdate`, `monthaddm`, `year`, `hobbies`, `hobbie2`, `hobbie3`, `sports`, `sport2`, `sport3`, `health`) VALUES
+('1', 'Hardik', 'abc', 'Yewale', '10101010', 'Information Technology', 'First', 'SEM 1', 'Barcelona', 'a', 'hardik@gmail.com', '2020-10-01', '2010-10-10', 'First', '', 'Football', '', '', 'chess', 'volleyball', ''),
+('2', 'pd', 'sdd', 'hero', '12343212', 'Mechanical Engineering', 'First', 'SEM 1', 'Amsterdam', 'o', 'pd@gmail.com', '1992-10-01', '2020-10-07', 'First', '', '', '', '', '', '', 'handicapped'),
+('', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-10-10', '2020-10-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

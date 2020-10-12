@@ -16,7 +16,7 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <title>Student Form</title>
+    <title>Educational Qualification form</title>
     <style>
       body {
         background-color: #bebebe;
@@ -73,7 +73,7 @@
                 aria-describedby="emailHelp"
                 placeholder="10th Marks in %"
                 value="<?php echo $row['std_rollno']; ?>"
-                required
+                
               />
             </div>
             <div class="form-group col-md-3">
@@ -86,14 +86,14 @@
                 aria-describedby="emailHelp"
                 placeholder="Enter Your Leaving Date"
                 value="<?php echo $row['sscdate']; ?>"
-                required
+                
                 min="2005-01-02"
 
               />
             </div>
             <div class="form-group col-md-3">
               <label for="dept" style="padding-top: 5px">10th BOARD</label>
-              <select name="sscboard" required>
+              <select name="sscboard" >
                 <option value="<?php echo $row['sscboard']; ?>"><?php echo $row['sscboard']; ?></option>
                 <option value="SSC">State Board Maharashtra</option>
                 <option value="CBSC">CBSE</option>
@@ -128,7 +128,7 @@
                 aria-describedby="emailHelp"
                 placeholder="HSC/Diploma % "
                 value="<?php echo $row['dipmarks']; ?>"
-                required
+                
               />
             </div>
             <div class="form-group col-md-2">
@@ -141,7 +141,7 @@
                 aria-describedby="emailHelp"
                 placeholder="Enter Your Birthdate"
                 value="<?php echo $row['dipdate']; ?>"
-                required
+                
                 min="2005-01-02"
 
               />

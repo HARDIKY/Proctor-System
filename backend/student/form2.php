@@ -673,6 +673,7 @@
   <br>
     &nbsp; <input type="submit" name="subForm2" value="Submit" class="btn btn-dark"> &nbsp; &nbsp;
     <input type="submit" name="mkpdf2" value="Download pdf" class="btn btn-dark"> &nbsp; &nbsp;
+    <a href="form3.php" class="btn btn-dark">Next Form</a>
     <a href="studentHome.php" class="btn btn-dark">Go Home</a>
     <?php
             }

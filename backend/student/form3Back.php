@@ -6,6 +6,7 @@
     }
 
     $conn = mysqli_connect('localhost', 'root', '', 'student');
+    
     $val = $_SESSION['rollnol'];
     $sscmarks = $_POST['sscmarks'];
     $sscdate = $_POST['sscdate'];
@@ -53,13 +54,202 @@
     if($rowcount == 1) {
         $q1 = "UPDATE qualidetail SET std_rollno = '$val', sscmarks = '$sscmarks', sscdate = '$sscdate', sscboard = '$sscboard', dipmarks = '$dipmarks', dipdate = '$dipdate', sem1attd = '$sem1attd', sem1date = '$sem1date', sem1sub = '$sem1sub', sem1per = '$sem1per', sem2attd = '$sem2attd', sem2date = '$sem2date', sem2sub = '$sem2sub', sem2per = '$sem2per', sem3attd = '$sem3attd', sem3date = '$sem3date', sem3sub = '$sem3sub', sem3per = '$sem3per', sem4attd = '$sem4attd', sem4date = '$sem4date', sem4sub = '$sem4sub',`sem4per`= '$sem4per',`sem5attd`= '$sem5attd',`sem5date`= '$sem5date',`sem5sub`= '$sem5sub',`sem5per`= '$sem5per',`sem6attd`= '$sem6attd',`sem6date`= '$sem6date',`sem6sub`= '$sem6sub',`sem6per`= '$sem6per',`sem7attd`= '$sem7attd',`sem7date`= '$sem7date',`sem7sub`= '$sem7sub',`sem7per`= '$sem7per',`sem8attd`= '$sem8attd',`sem8date`= '$sem8date',`sem8sub`= '$sem8sub',`sem8per`= '$sem8per' WHERE std_rollno = '$val';";
         mysqli_query($conn, $q1);
-        header("location:form3.php?form3=updated");
-    }else {
-        $q2 = "INSERT INTO qualidetail (std_rollno, sscmarks, sscdate, sscboard, dipmarks, dipdate, sem1attd, sem1date, sem1sub, sem1per, sem2attd, sem2date, sem2sub, sem2per, sem3attd, sem3date, sem3sub, sem3per, sem4attd, sem4date, sem4sub, sem4per, sem5attd, sem5date, sem5sub, sem5per, sem6attd, sem6date, sem6sub, sem6per, sem7attd, sem7date, sem7sub, sem7per, sem8attd, sem8date, sem8sub, sem8per) VALUES ('$val','$sscmarks','$sscdate', '$sscboard', '$dipmarks', '$dipdate', '$sem1attd', '$sem1date', '$sem1sub','$sem1per', '$sem2attd', '$sem2date', '$sem2sub','$sem2per', '$sem3attd', '$sem3date', '$sem3sub','$sem3per', '$sem4attd', '$sem4date', '$sem4sub','$sem4per', '$sem5attd', '$sem5date', '$sem5sub','$sem5per', '$sem6attd', '$sem6date', '$sem6sub','$sem6per', '$sem7attd', '$sem7date', '$sem7sub','$sem7per', '$sem8attd', '$sem8date', '$sem8sub','$sem8per');";
-        mysqli_query($conn, $q2);
-        header("location:form3.php?form3=completed");
-    }
+        
+        $filename = $_FILES['ssc_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['ssc_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET ssc_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // Leaving Upload==============================
+        $filename = $_FILES['hscm_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['hscm_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET dip_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // hsc marksheet Upload======================================
+        $filename = $_FILES['hscl_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['hscl_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET dip_leave_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // marksheet SEM 1=================================
+        $filename = $_FILES['sem1_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem1_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem1_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // sem 2Marksheet==================================
+        $filename = $_FILES['sem2_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem2_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem2_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // Sem 3 marksheet=================================
+        $filename = $_FILES['sem3_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem3_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem3_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // Sem 4 marksheet===============================
+        $filename = $_FILES['sem4_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem4_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem4_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // Sem 5 marksheet===============================
+        $filename = $_FILES['sem5_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem5_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem5_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // Sem6 marksheet=================================
+        $filename = $_FILES['sem6_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem6_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem6_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // Sem 7 marksheet===============================
+        $filename = $_FILES['sem7_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem7_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem7_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+        // Sem 8 Marksheet=====================================
+        $filename = $_FILES['sem8_pdf']['name'];
+        $destination = 'uploads/' . $filename;
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $file = $_FILES['sem8_pdf']['tmp_name'];
+        if (!in_array($extension, ['pdf'])) {
+            echo "You file extension must be  .pdf ";
+        }else {
+            if (move_uploaded_file($file, $destination)) {
+                $sql = "UPDATE qualidetail SET sem8_cert = '$filename' WHERE std_rollno = '$val';";
+                if (mysqli_query($conn, $sql)) {
+                    header("location:form1.php?upload=success");
+                }
+            }else {
+                header("location:form1.php?upload=notsuccess");
+            }
+        }
+ 
+    header("location:form3.php?form3=updated");
+
+    $q2 = "INSERT INTO qualidetail (std_rollno, sscmarks, sscdate, sscboard, dipmarks, dipdate, sem1attd, sem1date, sem1sub, sem1per, sem2attd, sem2date, sem2sub, sem2per, sem3attd, sem3date, sem3sub, sem3per, sem4attd, sem4date, sem4sub, sem4per, sem5attd, sem5date, sem5sub, sem5per, sem6attd, sem6date, sem6sub, sem6per, sem7attd, sem7date, sem7sub, sem7per, sem8attd, sem8date, sem8sub, sem8per) VALUES ('$val','$sscmarks','$sscdate', '$sscboard', '$dipmarks', '$dipdate', '$sem1attd', '$sem1date', '$sem1sub','$sem1per', '$sem2attd', '$sem2date', '$sem2sub','$sem2per', '$sem3attd', '$sem3date', '$sem3sub','$sem3per', '$sem4attd', '$sem4date', '$sem4sub','$sem4per', '$sem5attd', '$sem5date', '$sem5sub','$sem5per', '$sem6attd', '$sem6date', '$sem6sub','$sem6per', '$sem7attd', '$sem7date', '$sem7sub','$sem7per', '$sem8attd', '$sem8date', '$sem8sub','$sem8per');";
+    mysqli_query($conn, $q2);
+    header("location:form3.php?form3=completed");
+    
 } 
+    }
 
 
     // For PDF 
@@ -121,355 +311,5 @@
 
 
 
-        // ======================ssc marksheet Upload=================================
-      if (isset($_POST['f3btn1'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['ssc_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['ssc_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-
-
-// ================================Leaving Upload==============================
-          if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['hscl_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['hscl_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-
-// ==============================hsc marksheet Upload======================================
-         if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['hscm_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['hscm_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-
-
-// ========================================marksheet SEM 1=================================
-
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem1_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem1_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-// ============================ sem 2Marksheet==================================
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem2_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem2_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-
-// ==================================Sem 3 marksheet=================================
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem3_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem3_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-
-
-// ======================================Sem 4 marksheet===============================
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem4_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem4_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-} 
-// ================================Sem 5 marksheet===============================
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem5_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem5_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-
-// ====================================Sem6 marksheet=================================
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem6_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem6_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-// ====================================Sem 7 marksheet===============================
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem7_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem7_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
-// ==============================Sem 8 Marksheet=====================================
-        if (isset($_POST['f3btn2'])) { // if upload button on the form is clicked
-    // name of the uploaded file
-    $filename = $_FILES['sem8_pdf']['name'];
-
-    // destination of the file on the server
-    $destination = 'uploads/' . $filename;
-
-    // get the file extension
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['sem8_pdf']['tmp_name'];
-    // $size = $_FILES['pdf_file']['size'];
-
-    if (!in_array($extension, ['pdf']))
-     {
-        echo "You file extension must be  .pdf ";
-    } 
-    else {
-        // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
-            if (mysqli_query($conn, $sql)) {
-                header("location:form1.php?upload=success");
-            }
-        } else {
-            header("location:form1.php?upload=notsuccess");
-        }
-    }
-}  
+     
 ?>

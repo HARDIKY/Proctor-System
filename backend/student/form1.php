@@ -163,6 +163,8 @@
            accept="application/pdf"
           style="padding-top: 5px"
         /><br /><br />
+        <!-- -------------------------Upload Button------------------------- -->
+        <!-- <button name="Uploadp" type="submit" value="Upload">Upload</button> -->
       </div>
     </div>
      
@@ -320,11 +322,13 @@
         <label for="inputPassword4">Upload Doctor's Documents</label>
         <input
           type="file"
-          name="idpdf"
-          id="pdf_file"
+          name="docpdf"
+          id="doc_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
+
+        <!-- <button type="submit" name="fbtn2" id="fbtn_2">Upload</button> -->
       </div>
     </div>
     <hr>
@@ -346,11 +350,13 @@
         <label for="inputPassword4">Upload Certificate:</label>
         <input
           type="file"
-          name="idpdf"
-          id="pdf_file"
+          name="hobpdf"
+          id="hob_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <!-- ----------------btn here------------------ -->
+         <!-- <button type="submit" name="fbtn3" id="fbtn_3">Upload</button> -->
       </div> 
     </div>
     <!-- ADD MORE BUTTON FOR HOBBIES-->
@@ -361,11 +367,11 @@
           <label for="inputEmail4" style="padding-top: 5px"></label>
           <input
             type="text"
-            name="hobbie2"
+            name="hob2_pdf"
             class="form-control"
-            id="NameInfo2"
+            id="hob2_pdf"
             aria-describedby="emailHelp"
-            placeholder="Hobbie 2"
+            placeholder="Hobbie 1"
             value="<?php echo $row['hobbie2']; ?>"
           />
         </div>
@@ -373,11 +379,13 @@
           <label for="inputPassword4">&nbsp;&nbsp;Upload Certificate:</label>
           <input
             type="file"
-            name="idpdf"
-            id="pdf"
+            name="hob3pdf"
+            id="hob3_pdf"
             accept="application/pdf"
             style="padding-top: 5px"
           />
+          <!-- ----------------btn here------------------ -->
+         <!-- <button type="submit" name="fbtn4" id="fbtn_4">Upload</button> -->
         </div>
         <div class="form-group col-md-3">
           <label for="inputEmail4" style="padding-top: 5px"></label>
@@ -387,9 +395,10 @@
             class="form-control"
             id="NameInfo2"
             aria-describedby="emailHelp"
-            placeholder="Hobbie 3 "
+            placeholder="Hobbie 2 "
             value="<?php echo $row['hobbie3']; ?>"
           />
+
         </div>
         <div class="form-group col-md-7 pp">
           <label for="inputPassword4">&nbsp;&nbsp;Upload Certificate:</label>
@@ -400,6 +409,8 @@
             accept="application/pdf"
             style="padding-top: 5px"
           />
+          <!-- ----------------btn here------------------ -->
+         <!-- <button type="submit" name="fbtn5" id="fbtn_5">Upload</button> -->
         </div> 
       </div> 
     </div>
@@ -421,11 +432,13 @@
       <label for="inputPassword4">Upload Certificate:</label>
         <input
           type="file"
-          name="idpdf"
-          id="pdf_file"
+          name="sppdf"
+          id="sp_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <!-- ----------------btn here------------------ -->
+         <!-- <button type="submit" name="fbtn4" id="fbtn_4">Upload</button> -->
     </div> 
   </div>
   <!-- ADD MORE BUTTON FOR SPORTS -->
@@ -453,6 +466,8 @@
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <!-- ----------------btn here------------------ -->
+         <!-- <button type="submit" name="fbtn6" id="fbtn_6">Upload</button> -->
       </div>
       <div class="form-group col-md-3">
         <label for="inputEmail4" style="padding-top: 5px"></label>
@@ -475,6 +490,8 @@
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <!-- ----------------btn here------------------ -->
+         <!-- <button type="submit" name="fbtn7" id="fbtn_7">Upload</button> -->
       </div> 
     </div> 
   </div>

@@ -77,4 +77,128 @@
     
         }
     
+// ============================================btn 1======================================
+if (isset($_POST['Uploadp'])) { // if upload button on the form is clicked
+    // name of the uploaded file
+    $filename = $_FILES['pdf_file']['name'];
+
+    // destination of the file on the server
+    $destination = 'uploads/' . $filename;
+
+    // get the file extension
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+    // the physical file on a temporary uploads directory on the server
+    $file = $_FILES['pdf_file']['tmp_name'];
+    // $size = $_FILES['pdf_file']['size'];
+
+    if (!in_array($extension, ['pdf']))
+     {
+        echo "You file extension must be  .pdf ";
+    } 
+    else {
+        // move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($file, $destination)) {
+            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
+            if (mysqli_query($conn, $sql)) {
+                header("location:form1.php?upload=success");
+            }
+        } else {
+            header("location:form1.php?upload=notsuccess");
+        }
+    }
+}
+// ===================================btn2=======================================
+if (isset($_POST['fbtn2'])) { // if upload button on the form is clicked
+    // name of the uploaded file
+    $filename = $_FILES['doc_pdf']['name'];
+
+    // destination of the file on the server
+    $destination = 'uploads/' . $filename;
+
+    // get the file extension
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+    // the physical file on a temporary uploads directory on the server
+    $file = $_FILES['doc_pdf']['tmp_name'];
+    // $size = $_FILES['pdf_file']['size'];
+
+    if (!in_array($extension, ['pdf']))
+     {
+        echo "You file extension must be  .pdf ";
+    } 
+    else {
+        // move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($file, $destination)) {
+            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
+            if (mysqli_query($conn, $sql)) {
+                header("location:form1.php?upload=success");
+            }
+        } else {
+            header("location:form1.php?upload=notsuccess");
+        }
+    }
+}
+// =======================================hobbies btn===================================
+if (isset($_POST['fbtn3'])) { // if upload button on the form is clicked
+    // name of the uploaded file
+    $filename = $_FILES['hob_pdf']['name'];
+
+    // destination of the file on the server
+    $destination = 'uploads/' . $filename;
+
+    // get the file extension
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+    // the physical file on a temporary uploads directory on the server
+    $file = $_FILES['hob_pdf']['tmp_name'];
+    // $size = $_FILES['pdf_file']['size'];
+
+    if (!in_array($extension, ['pdf']))
+     {
+        echo "You file extension must be  .pdf ";
+    } 
+    else {
+        // move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($file, $destination)) {
+            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
+            if (mysqli_query($conn, $sql)) {
+                header("location:form1.php?upload=success");
+            }
+        } else {
+            header("location:form1.php?upload=notsuccess");
+        }
+    }
+}
+// =================================sports btn================================
+if (isset($_POST['fbtn4'])) { // if upload button on the form is clicked
+    // name of the uploaded file
+    $filename = $_FILES['sp_pdf']['name'];
+
+    // destination of the file on the server
+    $destination = 'uploads/' . $filename;
+
+    // get the file extension
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+    // the physical file on a temporary uploads directory on the server
+    $file = $_FILES['sp_pdf']['tmp_name'];
+    // $size = $_FILES['pdf_file']['size'];
+
+    if (!in_array($extension, ['pdf']))
+     {
+        echo "You file extension must be  .pdf ";
+    } 
+    else {
+        // move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($file, $destination)) {
+            $sql = "INSERT INTO files (pdf_file) VALUES ('$filename')";
+            if (mysqli_query($conn, $sql)) {
+                header("location:form1.php?upload=success");
+            }
+        } else {
+            header("location:form1.php?upload=notsuccess");
+        }
+    }
+}
 ?>

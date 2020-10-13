@@ -20,7 +20,7 @@ if (isset($_POST['Upload1'])) { // if upload button on the form is clicked
 
     // the physical file on a temporary uploads directory on the server
     $file = $_FILES['pdf_file']['tmp_name'];
-    $size = $_FILES['pdf_file']['size'];
+    // $size = $_FILES['pdf_file']['size'];
 
     if (!in_array($extension, ['pdf']))
      {

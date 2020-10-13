@@ -58,7 +58,7 @@
         {
             ?>
 
-      <form action="form3Back.php" method="POST">
+      <form action="form3Back.php" method="POST" enctype="multipart/form-data">
         
         <h4>Higher Secondary Qualification Information</h4>
         <div class="forborder" style="border: solid; padding: 15px; border-radius: 15px ">
@@ -108,13 +108,14 @@
               >
               <input
                 type="file"
-                name="idpdf"
-                id="pdf_file"
+                name="ssc_pdf"
+                id="ssc_pdf"
                 accept="application/pdf"
                 style="padding-top: 5px"
                 
               />
-              <br /><br />
+              <label><?php echo $row['ssc_cert']; ?></label>
+              <br />
             </div>
           </div>
           <div class="form-row">
@@ -156,13 +157,14 @@
               >
               <input
                 type="file"
-                name="hscmpdf"
+                name="hscm_pdf"
                 id="hscm_pdf"
                 accept="application/pdf"
                 style="padding-top: 5px"
                 
               />
-              <br /><br />
+              <label><?php echo $row['dip_cert']; ?></label>
+              <br />
             </div>
             <div class="form-group col-md-4">
               <label for="inputPassword4"
@@ -170,13 +172,14 @@
               >
               <input
                 type="file"
-                name="idpdf"
-                id="pdf_file"
+                name="hscl_pdf"
+                id="hscl_pdf"
                 accept="application/pdf"
                 style="padding-top: 5px"
                 
               />
-              <br /><br />
+              <label><?php echo $row['dip_leave_cert']; ?></label>
+              <br />
             </div>
           </div>
         </div>
@@ -243,11 +246,12 @@
               <label for="inputPassword4">Upload Sem 1 Marksheet :</label>
               <input
                 type="file"
-                name="sem1pdf"
+                name="sem1_pdf"
                 id="sem1_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem1_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -315,11 +319,12 @@
               <label for="inputPassword4">Upload Sem 2 Marksheet :</label>
               <input
                 type="file"
-                name="sem2pdf"
+                name="sem2_pdf"
                 id="sem2_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem2_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -386,11 +391,12 @@
               <label for="inputPassword4">Upload Sem 3 Marksheet :</label>
               <input
                 type="file"
-                name="sem3pdf"
+                name="sem3_pdf"
                 id="sem3_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem3_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -457,11 +463,12 @@
               <label for="inputPassword4">Upload Sem 4 Marksheet :</label>
               <input
                 type="file"
-                name="sem4pdf"
+                name="sem4_pdf"
                 id="sem4_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem4_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -529,11 +536,12 @@
               <label for="inputPassword4">Upload Sem 5 Marksheet :</label>
               <input
                 type="file"
-                name="sem5pdf"
+                name="sem5_pdf"
                 id="sem5_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem5_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -600,11 +608,12 @@
               <label for="inputPassword4">Upload Sem 6 Marksheet :</label>
               <input
                 type="file"
-                name="sem6pdf"
+                name="sem6_pdf"
                 id="sem6_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem6_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -670,11 +679,12 @@
               <label for="inputPassword4">Upload Sem 7 Marksheet :</label>
               <input
                 type="file"
-                name="sem7pdf"
+                name="sem7_pdf"
                 id="sem7_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem7_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -741,11 +751,12 @@
               <label for="inputPassword4">Upload Sem 8 Marksheet :</label>
               <input
                 type="file"
-                name="sem8pdf"
+                name="sem8_pdf"
                 id="sem8_pdf"
                 accept="application/pdf"
                 style="padding-top: 35px"
               />
+              <label><?php echo $row['sem8_cert']; ?></label>
             </div>
           </div>
         </div>
@@ -753,6 +764,7 @@
         <br>
         &nbsp; <input type="submit" name="subForm3" value="Submit" class="btn btn-dark"> &nbsp; &nbsp;
         <input type="submit" name="mkpdf3" value="Download pdf" class="btn btn-dark"> &nbsp; &nbsp;
+        <a href="form4.php" class="btn btn-dark">Next Form</a>
         <a href="studentHome.php" class="btn btn-dark">Go Home</a>
         <?php
             }

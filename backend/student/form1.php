@@ -79,6 +79,9 @@
     if ($_GET['form1'] == 'updated') {
         echo '<script>alert("Student Details updated successfully")</script>';
     }
+    if ($_GET['form1'] == 'notupdated') {
+      echo '<script>alert("There is some problem with your data")</script>';
+  }
   }
 ?>
 
@@ -100,7 +103,7 @@
   while($row = mysqli_fetch_array($result))
     {
   ?>
-  <form action="form1Back.php" method="POST">
+  <form action="form1Back.php" method="POST" enctype="multipart/form-data">
   <br />
   <h4>Contact Information</h4>
   <div class="forborder" style="border: solid; padding: 10px; border-radius: 15px">
@@ -158,11 +161,13 @@
         <label for="inputPassword4">Upload The Id card</label>
         <input
           type="file"
-          name="idpdf"
+          name="pdf_file"
           id="pdf_file"
-           accept="application/pdf"
+          accept="application/pdf"
           style="padding-top: 5px"
-        /><br /><br />
+        />
+        <label><?php echo $row['idcard']; ?></label>
+        <br />
         <!-- -------------------------Upload Button------------------------- -->
         <!-- <button name="Uploadp" type="submit" value="Upload">Upload</button> -->
       </div>
@@ -322,12 +327,12 @@
         <label for="inputPassword4">Upload Doctor's Documents</label>
         <input
           type="file"
-          name="docpdf"
+          name="doc_pdf"
           id="doc_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
-
+        <label><?php echo $row['doc_cert']; ?></label>
         <!-- <button type="submit" name="fbtn2" id="fbtn_2">Upload</button> -->
       </div>
     </div>
@@ -338,7 +343,7 @@
         <label for="inputEmail4">Hobbies ?</label>
         <input
           type="text"
-          name="hobbie2"
+          name="hobbies"
           class="form-control"
           id="NameInfo2"
            aria-describedby="emailHelp"
@@ -350,11 +355,12 @@
         <label for="inputPassword4">Upload Certificate:</label>
         <input
           type="file"
-          name="hobpdf"
+          name="hob_pdf"
           id="hob_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <label><?php echo $row['hob1_cert']; ?></label>
         <!-- ----------------btn here------------------ -->
          <!-- <button type="submit" name="fbtn3" id="fbtn_3">Upload</button> -->
       </div> 
@@ -367,7 +373,7 @@
           <label for="inputEmail4" style="padding-top: 5px"></label>
           <input
             type="text"
-            name="hob2_pdf"
+            name="hobbie2"
             class="form-control"
             id="hob2_pdf"
             aria-describedby="emailHelp"
@@ -379,11 +385,12 @@
           <label for="inputPassword4">&nbsp;&nbsp;Upload Certificate:</label>
           <input
             type="file"
-            name="hob3pdf"
-            id="hob3_pdf"
+            name="hob2_pdf"
+            id="hob2_pdf"
             accept="application/pdf"
             style="padding-top: 5px"
           />
+          <label><?php echo $row['hob2_cert']; ?></label>
           <!-- ----------------btn here------------------ -->
          <!-- <button type="submit" name="fbtn4" id="fbtn_4">Upload</button> -->
         </div>
@@ -404,11 +411,12 @@
           <label for="inputPassword4">&nbsp;&nbsp;Upload Certificate:</label>
           <input
             type="file"
-            name="idpdf"
-            id="pdf_file"
+            name="hob3_pdf"
+            id="hob3_pdf"
             accept="application/pdf"
             style="padding-top: 5px"
           />
+          <label><?php echo $row['hob3_cert']; ?></label>
           <!-- ----------------btn here------------------ -->
          <!-- <button type="submit" name="fbtn5" id="fbtn_5">Upload</button> -->
         </div> 
@@ -432,11 +440,12 @@
       <label for="inputPassword4">Upload Certificate:</label>
         <input
           type="file"
-          name="sppdf"
+          name="sp_pdf"
           id="sp_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <label><?php echo $row['sport1_cert']; ?></label>
         <!-- ----------------btn here------------------ -->
          <!-- <button type="submit" name="fbtn4" id="fbtn_4">Upload</button> -->
     </div> 
@@ -461,11 +470,12 @@
         <label for="inputPassword4">Upload Certificate:</label>
         <input
           type="file"
-          name="idpdf"
-          id="pdf_file"
+          name="sp2_pdf"
+          id="sp2_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <label><?php echo $row['sport2_cert']; ?></label>
         <!-- ----------------btn here------------------ -->
          <!-- <button type="submit" name="fbtn6" id="fbtn_6">Upload</button> -->
       </div>
@@ -485,11 +495,12 @@
         <label for="inputPassword4">Upload Certificate:</label>
         <input
           type="file"
-          name="idpdf"
-          id="pdf_file"
+          name="sp3_pdf"
+          id="sp3_pdf"
           accept="application/pdf"
           style="padding-top: 5px"
         />
+        <label><?php echo $row['sport3_cert']; ?></label>
         <!-- ----------------btn here------------------ -->
          <!-- <button type="submit" name="fbtn7" id="fbtn_7">Upload</button> -->
       </div> 
@@ -500,6 +511,7 @@
   <br>
   &nbsp; <input type="submit" name="subForm1" value="Submit" class="btn btn-dark"> &nbsp; &nbsp;
   <input type="submit" name="mkpdf1" value="Download pdf" class="btn btn-dark"> &nbsp; &nbsp;
+  <a href="form2.php" class="btn btn-dark">Next Form</a>
   <a href="studentHome.php" class="btn btn-dark">Go Home</a>
   <br>
   </div>

@@ -29,6 +29,14 @@
     if($rowcount3 == 0) {
       $q3 = "INSERT INTO qualidetail (std_rollno) VALUES ('$val');";
       mysqli_query($conn, $q3);
+    }
+    // for Future Plans Table
+    $query4 = "SELECT * FROM futureplans WHERE rollno = '$val';";
+    $result4 = mysqli_query($conn, $query4);
+    $rowcount4 = mysqli_num_rows($result4);
+    if($rowcount4 == 0) {
+      $q4 = "INSERT INTO futureplans (rollno) VALUES ('$val');";
+      mysqli_query($conn, $q4);
     } 
 ?>
 

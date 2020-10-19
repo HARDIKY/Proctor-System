@@ -15,14 +15,6 @@
               <!--Teacher Register-->
               <form action="teacherReg.php" method="POST">
                 <h1>Create A Teacher Account</h1>
-                <!--<div class="social-container">
-                  <a href="#" class="social"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a href="#" class="social"><i class="fab fa-google"></i></a>
-                  <a href="#" class="social"><i class="fab fa-linkedin"></i></a>
-                </div>
-                <span>or use your email for registration</span>-->
                 <input id="t_name" type="text" name="t_name" placeholder="Name" />
                 <input id="t_email" type="email" name="t_email" placeholder="Email" />
                 <input id="t_password" type="password" name="t_password" placeholder="Password" />
@@ -33,14 +25,6 @@
               <!--Teacher Login-->
               <form action="teacherLogin.php" method="POST">
                 <h1>Log In As Teacher</h1>
-                <!--<div class="social-container">
-                  <a href="#" class="social"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a href="#" class="social"><i class="fab fa-google"></i></a>
-                  <a href="#" class="social"><i class="fab fa-linkedin"></i></a>
-                </div>
-                <span>or use your account</span>-->
                 <input id="t_emaill" type="email" name="t_emaill" placeholder="Email" />
                 <input id="t_passwordl" type="password" name="t_passwordl" placeholder="Password" />
                 <!--<a href="#">Forgot Your Password</a>-->

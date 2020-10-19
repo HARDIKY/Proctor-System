@@ -1,23 +1,28 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['t_emaill'])) {
+        header("location:teacher.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<style>
-body {
-    background-color: #52b788;
-}
-.thead-dark{
-    background-color: #14213d;
-    color: white;
-}
-.tbody {
-    border-style: solid 1px;
-}
-
-</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+    body {
+      background-color: #52b788;
+    }
+    .thead-dark{
+      background-color: #14213d;
+      color: white;
+    }
+    .tbody {
+      border-style: solid 1px;
+    }
+    </style>
     <title>pp</title>
 </head>
 <body>
@@ -50,21 +55,22 @@ body {
       <label for="inputState">Department : </label>
       <select name="dept" id="inputState" class="form-control">
         <option >Select Department</option>
-        <option value="IT" >Information Technology </option>
-        <option value="CO">Computer Enginnering</option>
-        <option value="EC">Electronic Enginnering</option>
-        <option value="CE">Civil Enginnering</option>
-        <option value="ME">Mechanical Enginnering</option>
+        <option value="Mechanical Engineering">Mechanical Engineering</option>
+        <option value="Electronics And TeleCommunication Engineering">Electronics And TeleCommunication Engineering</option>
+        <option value="Computer Engineering">Computer Engineering</option>
+        <option value="Information Technology">Information Technology</option>
+        <option value="Computer Engineering">Computer Engineering</option>
+        <option value="Civil Engineering">Civil Engineering</option>
       </select>
     </div> 
     <div class="form-group">
       <label for="inputState">Year : </label>
       <select name="year" id="inputState" class="form-control">
         <option >Select Year</option>
-        <option value="first">First Year</option>
-        <option value="second">Second Year</option>
-        <option value="third">Third Year</option>
-        <option value="fourth">Fourth Year</option>
+        <option value="First">First Year</option>
+        <option value="Second">Second Year</option>
+        <option value="Third">Third Year</option>
+        <option value="Fourth">Fourth Year</option>
       </select>
     </div>
     <br>
@@ -101,18 +107,18 @@ body {
             {
                 ?>
             <tr>
-              <td><?php echo $row['std_rollno'] ?></td>
+              <td><?php echo $row['rollno'] ?></td>
               <td><?php echo $row['name'] ?></td>
               <td>
                 <form action="editForm1.php" method="POST">
-                  <input type="hidden" name="editbtn" value="<?php echo $row['std_rollno'] ?>" >
-                  <button type="submit" name="editstd" class="btn btn-primary">Edit Form</button>
+                  <input type="hidden" name="std_rollno" value="<?php echo $row['rollno'] ?>" >
+                  <button type="submit" name="edit-btn" class="btn btn-primary">Edit Form</button>
                 </form>
               </td>
               <td>
                 <form action="deleteForm.php" method="POST">
-                  <input type="hidden" name="delbtn" value="<?php echo $row['std_rollno'] ?>" >
-                  <button type="submit" name="delstd" class="btn btn-danger">Delete</button>
+                  <input type="hidden" name="delbtn" value="<?php echo $row['rollno'] ?>" >
+                  <button type="submit" name="del-btn" class="btn btn-danger">Delete</button>
                 </form>
               </td>
               
